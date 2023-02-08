@@ -134,7 +134,7 @@ HEAD とアップストリームとの差
 #### Zplug  
 1. 以下の行を ``~/.zshrc`` に追加  
     ```zsh:.zshrc
-    zplug "alpaca-honke/prowpt", as:theme
+    zplug "alpaca-honke/prowpt", as:plugin
     ```
 1. ターミナルを再起動  
 

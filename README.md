@@ -136,7 +136,7 @@ HEAD and upstream defference
 #### Zplug  
 1. Add the following line to ```~/.zshrc```  
     ```zsh:.zshrc
-    zplug "alpaca-honke/prowpt", as:theme
+    zplug "alpaca-honke/prowpt", as:plugin
     ```
 1. Restart your terminal  
 
