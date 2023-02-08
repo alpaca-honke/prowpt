@@ -1,4 +1,8 @@
 # Prowpt - シンプルで軽量、カスタマイズ可能な Bash、Zsh 用 Powerline 風プロンプトテーマ  
+![GitHub top language](https://img.shields.io/github/languages/top/alpaca-honke/prowpt?style=flat-square)![](https://images.shelds.io/github/languages/top/alpaca-honke/prowpt)
+![GitHub repo size](https://img.shields.io/github/repo-size/alpaca-honke/prowpt?style=flat-square)
+![GitHub](https://img.shields.io/github/license/alpaca-honke/prowpt?style=flat-square)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/alpaca-honke/prowpt/main?label=last%20commit%20%28main%29&style=flat-square)![GitHub last commit (branch)](https://img.shields.io/github/last-commit/alpaca-honke/prowpt/main?label=last%20commit%20%28main%29&style=flat-square)
 作者は日本人にも関わらず、英語版のREADMEから書き始めてしまい、それを翻訳したものなので、不自然な日本語があるかと思います。ご了承ください。（一応不自然なところは直したつもりです。）  
 ## スクリーンショット  
 ![スクリーンショット](images/Screenshot.png)  
@@ -174,6 +178,7 @@ GIT_PS1_SHOWUPSTREAM=""
 以下はよく使用される区切り文字のリストです。  
 [区切り文字サンプル](images/delimiter-sample.png)  
 注：PWD区切り文字にはリスト中のe0b1, e0b5, e0b9, e0bb, e0c1, e0cd、セグメント区切り文字には他の文字を使用することができます。  
+垂直なセグメント区切り文字を使用する場合は、```PROWPT_SEGMENT_DELIMITER=""``` と指定してください。PWD区切り文字も同じようにするには、```|``` （パイプ）を指定してください。  
 
 | 変数名 | 説明 | デフォルト |  
 | ---- | --- | ---- |  

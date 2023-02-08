@@ -1,5 +1,9 @@
 [日本語のREADME](README-ja.md)も用意してあります。  
 # Prowpt - Simple, lightweight, and customizable Powerline-like prompt theme for Bash and Zsh  
+![GitHub top language](https://img.shields.io/github/languages/top/alpaca-honke/prowpt?style=flat-square)![](https://images.shelds.io/github/languages/top/alpaca-honke/prowpt)
+![GitHub repo size](https://img.shields.io/github/repo-size/alpaca-honke/prowpt?style=flat-square)
+![GitHub](https://img.shields.io/github/license/alpaca-honke/prowpt?style=flat-square)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/alpaca-honke/prowpt/main?label=last%20commit%20%28main%29&style=flat-square)
 ## Screenshot  
 ![Screenshot](images/Screenshot.png)  
 Note: Syantax highlighting is not included.  
@@ -78,7 +82,7 @@ HEAD and upstream defference
 1. Restart your terminal  
 
 #### Sheldon  
-1. Run following command  
+1. Run the following command  
     ```bash
     sheldon add prowpt --github alpaca-honke/prowpt --use '*.bash'
     ```
@@ -113,7 +117,7 @@ HEAD and upstream defference
     promptinit
     prompt adam1
     ```
-1. Add ```prowpt``` to the list of plugins for Oh-My-Zsh in ```~/.zshrc```  
+1. Add ```prowpt``` to the list of plugins for Oh-My-Zsh in the ```~/.zshrc```  
     ```zsh:.zshrc
     plugins=(
         #other plugins
@@ -137,7 +141,7 @@ HEAD and upstream defference
 1. Restart your terminal  
 
 #### Sheldon  
-1. Run following command  
+1. Run the following command  
     ```zsh
     sheldon add prowpt --github alpaca-honke/prowpt
     ```
@@ -149,13 +153,13 @@ You can easily customize using ```~/.config/prowpt/config.sh```.
     ```sh
     mkdir ~/.config/prowpt/
     ```
-1. Create and edit config file (You can use another text editor.)  
+1. Edit config file (You can use other text editors.)  
     ```sh
     vim ~/.config/prowpt/config.sh
     ```
 
 ### Customizable Value   
-You can easily customize prowpt by setting some variables like this:  
+You can easily customize prompt by setting some variables like this:  
 ```sh:config.sh
 PROWPT_SEGMENT_SEPARATOR=$'\ue0b8'
 PROWPT_CURRENT_TIME_BG="5"
@@ -176,6 +180,7 @@ You can set the delimiter using unicode like ```$'\ue0b0'```.
 There is a list of commonly used delimiters.  
 ![Delimiter sample](images/delimiter-sample.png)  
 Note: You can use e0b1, e0b5, e0b9, e0bb, e0c1, e0cd for the PWD delimiter, and any other character in the list for segment delimiters.  
+If you want to use vertical segment delimiters, set ```PROWPT_SEGMENT_DELIMITER=""```. The same as for PWD delimiters, you can use ```|``` (pipe).  
 
 | Variables | Description | Default |  
 | ---- | --- | ---- |  
