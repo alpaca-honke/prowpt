@@ -1,8 +1,9 @@
+**There is [an English README](README.md).**  
 # Prowpt - シンプルで軽量、カスタマイズ可能な Bash、Zsh 用 Powerline 風プロンプトテーマ  
 ![GitHub top language](https://img.shields.io/github/languages/top/alpaca-honke/prowpt?style=flat-square)![](https://images.shelds.io/github/languages/top/alpaca-honke/prowpt)
 ![GitHub repo size](https://img.shields.io/github/repo-size/alpaca-honke/prowpt?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/alpaca-honke/prowpt?style=flat-square)
-![GitHub last commit (branch)](https://img.shields.io/github/last-commit/alpaca-honke/prowpt/main?label=last%20commit%20%28main%29&style=flat-square)![GitHub last commit (branch)](https://img.shields.io/github/last-commit/alpaca-honke/prowpt/main?label=last%20commit%20%28main%29&style=flat-square)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/alpaca-honke/prowpt/main?label=last%20commit%20%28main%29&style=flat-square)  
 作者は日本人にも関わらず、英語版のREADMEから書き始めてしまい、それを翻訳したものなので、不自然な日本語があるかと思います。ご了承ください。（一応不自然なところは直したつもりです。）  
 ## スクリーンショット  
 ![スクリーンショット](images/Screenshot.png)  
@@ -109,12 +110,6 @@ HEAD とアップストリームとの差
     ```zsh
     git clone https://github.com/alpaca-honke/prowpt.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/prowpt/
     ```
-1. ```~/.zshrc``` の以下の行をコメントアウト  
-    ```zsh:.zshrc
-    autoload -Uz promptinit
-    promptinit
-    prompt adam1
-    ```
 1. ```~/.zshrc```内のOh-My-Zsh のプラグインリストに ``prowpt`` を追加  
     ```zsh:.zshrc
     plugins=(
@@ -220,10 +215,11 @@ Git セグメントでは、[https://github.com/git/git/blob/master/contrib/comp
 
 | 変数 | 説明 | デフォルト |  
 | ---- | ---- | ---- |  
-| GIT_PS1_SHOWDIRTYSTATE | これをnoemptyに設定すると、ブランチ名の隣にステージされていない(*)変更とステージされた(+)変更が表示されます。| ```yes``` |  
+| GIT_PS1_SHOWDIRTYSTATE | これを空でない値に設定すると、ブランチ名の隣にステージされていない変更(*)とステージされた変更(+)が表示されます。| ```yes``` |  
 | GIT_PS1_SHOWSTASHSTATE | これを空でない値に設定すると、stashされた変更があれば、ブランチ名の横に '$' が表示されます。| ```yes``` |  
 | GIT_PS1_SHOWUNTRACKEDFILES | 空ではない値を設定することで、もし未追跡のファイルがあれば、ブランチ名の横に'%'が表示されます。| ```yes``` |  
 | GIT_PS1_SHOWUPSTREAM | ```GIT_PS1_SHOWUPSTREAM="auto"``` と設定すると、HEAD とその上流との差分がブランチ名の横に表示されるようになります。<" 上流が先行、">" HEADが先行、"<>" は分岐、"=" は差がないことを表します。| ```auto``` |  
+
 詳しくは [https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) もしくは [prowpt/git-prompt.sh](git-prompt.sh) を参照してください。その他のカスタマイズ可能な変数もそこに書かれています。  
 
 ### その他のカスタマイズ  

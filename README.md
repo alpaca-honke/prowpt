@@ -1,4 +1,4 @@
-[日本語のREADME](README-ja.md)も用意してあります。  
+**[日本語のREADME](README-ja.md)も用意してあります。**  
 # Prowpt - Simple, lightweight, and customizable Powerline-like prompt theme for Bash and Zsh  
 ![GitHub top language](https://img.shields.io/github/languages/top/alpaca-honke/prowpt?style=flat-square)![](https://images.shelds.io/github/languages/top/alpaca-honke/prowpt)
 ![GitHub repo size](https://img.shields.io/github/repo-size/alpaca-honke/prowpt?style=flat-square)
@@ -111,12 +111,6 @@ HEAD and upstream defference
     ```zsh
     git clone https://github.com/alpaca-honke/prowpt.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/prowpt/
     ```
-1. Comment out the following line in ```~/.zshrc```  
-    ```zsh:.zshrc
-    autoload -Uz promptinit
-    promptinit
-    prompt adam1
-    ```
 1. Add ```prowpt``` to the list of plugins for Oh-My-Zsh in the ```~/.zshrc```  
     ```zsh:.zshrc
     plugins=(
@@ -227,6 +221,7 @@ The customizable variables follow this script.
 | GIT_PS1_SHOWSTASHSTATE | By setting it to a nonempty value, if something is stashed, then a '$' will be shown next to the branch name. | ```yes``` |  
 | GIT_PS1_SHOWUNTRACKEDFILES | If you set it to a nonempty value, then a '%' will be shown next to the branch name if there're untracked files. | ```yes``` |  
 | GIT_PS1_SHOWUPSTREAM | If you set ```GIT_PS1_SHOWUPSTREAM="auto"```, then the difference betweeen HEAD and its upstream will be shown next to the branch name. A "<" indicates you are behind, ">" indicates you are ahead, "<>" indicates you have diverged and "=" indicates that there is no difference. | ```auto``` |  
+
 See [https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) or [prowpt/git-prompt.sh](git-prompt.sh) for details. Other customizable variables are also written there.  
 
 ### Other Customization  
