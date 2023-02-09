@@ -19,8 +19,8 @@ PROWPT_REPO_ROOT="$( cd "$( dirname "${BASH_SOURCE:-$0}")" && pwd -P )"
 
 source $PROWPT_REPO_ROOT/git-prompt.sh
 
-PROWPT_SEGMENT_DELIMITER=$'\ue0b0' # 
-PROWPT_PWD_DELIMITER=$'\ue0b1' # 
+PROWPT_SEGMENT_DELIMITER=$'\ue0b0'
+PROWPT_PWD_DELIMITER=$'\ue0b1'
 PROWPT_PWD_DELIMITER_FG="250"
 PROWPT_CURRENT_TIME_BG="31"
 PROWPT_CURRENT_TIME_FG="253"
@@ -112,18 +112,30 @@ prowpt_ansi_color () {
 }
 
 prowpt_current_time () {
-    echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_CURRENT_TIME_BG} ${PROWPT_CURRENT_TIME_FG}) ${PROWPT_CURRENT_TIME} $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_USER_BG} ${PROWPT_CURRENT_TIME_BG})${PROWPT_SEGMENT_DELIMITER}"
+    echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_CURRENT_TIME_BG} ${PROWPT_CURRENT_TIME_FG})"
+    echo -n " ${PROWPT_CURRENT_TIME} "
+    echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_USER_BG} ${PROWPT_CURRENT_TIME_BG})"
+    echo -n "${PROWPT_SEGMENT_DELIMITER}"
 }
 
 prowpt_user () {
-    echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_USER_BG} ${PROWPT_USER_FG}) ${PROWPT_USER} $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_HOST_BG} ${PROWPT_USER_BG})${PROWPT_SEGMENT_DELIMITER}"
+    echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_USER_BG} ${PROWPT_USER_FG})"
+    echo -n " ${PROWPT_USER} "
+    echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_HOST_BG} ${PROWPT_USER_BG})"
+    echo -n "${PROWPT_SEGMENT_DELIMITER}"
 }
 
 prowpt_host () {
     if [ "${PROWPT_PWD_ABBR:0:1}" = "~" ] ;then
-        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_HOST_BG} ${PROWPT_HOST_FG}) ${PROWPT_HOST} $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_HOME_BG} ${PROWPT_HOST_BG})${PROWPT_SEGMENT_DELIMITER}"
+        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_HOST_BG} ${PROWPT_HOST_FG})"
+        echo -n " ${PROWPT_HOST} "
+        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_HOME_BG} ${PROWPT_HOST_BG})"
+        echo -n "${PROWPT_SEGMENT_DELIMITER}"
     else
-        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_HOST_BG} ${PROWPT_HOST_FG}) ${PROWPT_HOST} $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_HOST_BG})${PROWPT_SEGMENT_DELIMITER}"
+        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_HOST_BG} ${PROWPT_HOST_FG})"
+        echo -n " ${PROWPT_HOST} "
+        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_HOST_BG})"
+        echo -n "${PROWPT_SEGMENT_DELIMITER}"
     fi
 }
 
@@ -131,25 +143,48 @@ prowpt_pwd () {
     if [ "${PROWPT_PWD_HOME_HIGHLIGHT}" = "yes" ] ;then
         if [ "${PROWPT_PWD_ABBR:0:1}" = "/" ] ;then
             if [ -z ${PROWPT_PWD_ABBR_SHORT} ] ;then
-                echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) / "
+                echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG})"
+                echo -n " / "
             else
-                echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) / $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_DELIMITER_FG})${PROWPT_PWD_DELIMITER} $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG})${PROWPT_PWD_ABBR_SHORT//\// $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_DELIMITER_FG})${PROWPT_PWD_DELIMITER}$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) }"
+                echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG})"
+                echo -n " / "
+                echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_DELIMITER_FG})"
+                echo -n "${PROWPT_PWD_DELIMITER} "
+                echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG})"
+                echo -n "${PROWPT_PWD_ABBR_SHORT//\// $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_DELIMITER_FG})${PROWPT_PWD_DELIMITER}$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) }"
             fi
         elif [ "${PROWPT_PWD_ABBR:0:1}" = "~" ] ;then
-            echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_HOME_BG} ${PROWPT_PWD_HOME_FG}) ~ $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_HOME_BG})${PROWPT_SEGMENT_DELIMITER}$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) ${PROWPT_PWD_ABBR_SHORT//\// $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_DELIMITER_FG})${PROWPT_PWD_DELIMITER}$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) }"
+            echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_HOME_BG} ${PROWPT_PWD_HOME_FG})"
+            echo -n " ~ "
+            echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_HOME_BG})"
+            echo -n "${PROWPT_SEGMENT_DELIMITER}"
+            echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG})"
+            echo -n " ${PROWPT_PWD_ABBR_SHORT//\// $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_DELIMITER_FG})${PROWPT_PWD_DELIMITER}$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) }"
         fi
     else
         if [ "${PROWPT_PWD_ABBR:0:1}" = "/" ] ;then
-            echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) / $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_DELIMITER_FG})${PROWPT_PWD_DELIMITER}$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) ${PROWPT_PWD_ABBR_SHORT//\// $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_DELIMITER_FG})${PROWPT_PWD_DELIMITER}$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) }"
+            echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG})"
+            echo -n " / "
+            echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_DELIMITER_FG})"
+            echo -n "${PROWPT_PWD_DELIMITER}"
+            echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG})"
+            echo -n " ${PROWPT_PWD_ABBR_SHORT//\// $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_DELIMITER_FG})${PROWPT_PWD_DELIMITER}$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) }"
         elif [ "${PROWPT_PWD_ABBR:0:1}" = "~" ] ;then
-            echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) ~ $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_DELIMITER_FG})${PROWPT_PWD_DELIMITER}$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) ${PROWPT_PWD_ABBR_SHORT//\// $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_DELIMITER_FG})${PROWPT_PWD_DELIMITER}$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) }"
+            echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG})"
+            echo -n " ~ "
+            echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_DELIMITER_FG})"
+            echo -n "${PROWPT_PWD_DELIMITER}"
+            echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG})"
+            echo -n " ${PROWPT_PWD_ABBR_SHORT//\// $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_DELIMITER_FG})${PROWPT_PWD_DELIMITER}$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PWD_BG} ${PROWPT_PWD_FG}) }"
         fi
     fi
 
     if [ -z $(git rev-parse --git-dir 2>/dev/null) ] ;then
-        echo -n " $(prowpt_ansi_color ${PROWPT_SHELL} reset ${PROWPT_PWD_BG})${PROWPT_SEGMENT_DELIMITER}"
+        echo -n " $(prowpt_ansi_color ${PROWPT_SHELL} reset ${PROWPT_PWD_BG})"
+        echo -n "${PROWPT_SEGMENT_DELIMITER}"
     else
-        echo -n " $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_GIT_DISPLAY_BG} ${PROWPT_PWD_BG})${PROWPT_SEGMENT_DELIMITER}"
+        echo -n " $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_GIT_DISPLAY_BG} ${PROWPT_PWD_BG})"
+        echo -n "${PROWPT_SEGMENT_DELIMITER}"
     fi
 }
 
@@ -157,14 +192,24 @@ prowpt_git() {
     if [ -z $(git rev-parse --git-dir 2>/dev/null) ] ;then
         echo -n ""
     else
-        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_GIT_DISPLAY_BG} ${PROWPT_GIT_DISPLAY_FG})${PROWPT_GIT_PROMPT}$(prowpt_ansi_color ${PROWPT_SHELL} reset ${PROWPT_GIT_DISPLAY_BG})${PROWPT_SEGMENT_DELIMITER}"
+        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_GIT_DISPLAY_BG} ${PROWPT_GIT_DISPLAY_FG})"
+        echo -n "${PROWPT_GIT_PROMPT}"
+        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} reset ${PROWPT_GIT_DISPLAY_BG})"
+        echo -n "${PROWPT_SEGMENT_DELIMITER}"
     fi
 }
 
 prowpt_prompt() {
     if [ $PROWPT_LAST_STATUS -eq 0 ] ;then
-        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PROMPT_BG} ${PROWPT_PROMPT_FG}) ${PROWPT_PROMPT} $(prowpt_ansi_color ${PROWPT_SHELL} reset ${PROWPT_PROMPT_BG})${PROWPT_SEGMENT_DELIMITER}"
+        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PROMPT_BG} ${PROWPT_PROMPT_FG})"
+        echo -n " ${PROWPT_PROMPT} "
+        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} reset ${PROWPT_PROMPT_BG})"
+        echo -n "${PROWPT_SEGMENT_DELIMITER}"
     else
-        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PROMPT_ERROR_BG} ${PROWPT_PROMPT_ERROR_FG}) ${PROWPT_LAST_STATUS} ${PROWPT_PROMPT} $(prowpt_ansi_color ${PROWPT_SHELL} reset ${PROWPT_PROMPT_ERROR_BG})${PROWPT_SEGMENT_DELIMITER}"
+        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_PROMPT_ERROR_BG} ${PROWPT_PROMPT_ERROR_FG})"
+        echo -n " ${PROWPT_LAST_STATUS}"
+        echo -n " ${PROWPT_PROMPT} "
+        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} reset ${PROWPT_PROMPT_ERROR_BG})"
+        echo -n "${PROWPT_SEGMENT_DELIMITER}"
     fi
 }
