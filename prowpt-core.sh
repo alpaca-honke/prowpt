@@ -35,6 +35,10 @@ PROWPT_PWD_HOME_BG="31"
 PROWPT_PWD_HOME_FG="253"
 PROWPT_GIT_BG="148"
 PROWPT_GIT_FG="236"
+PROWPT_GIT_DIRTY_BG="166"
+PROWPT_GIT_DIRTY_FG="253"
+PROWPT_GIT_STAGED_BG="178"
+PROWPT_GIT_STAGED_FG="236"
 PROWPT_PROMPT_BG="237"
 PROWPT_PROMPT_FG="253"
 PROWPT_PROMPT_ERROR_BG="5"
@@ -75,6 +79,19 @@ prowpt_init() {
         PROWPT_PWD_ABBR_SHORT="${PROWPT_PWD_ABBR:2:$((${#PROWPT_PWD_ABBR} - 2))}"
     fi
 
+    if [ -n "$(git rev-parse --git-dir 2>/dev/null)" ] ;then
+        if ! git diff --quiet ;then
+            PROWPT_GIT_DISPLAY_BG=$PROWPT_GIT_DIRTY_BG
+            PROWPT_GIT_DISPLAY_FG=$PROWPT_GIT_DIRTY_FG
+        elif [ -n "$(git status -s)" ] ;then
+            PROWPT_GIT_DISPLAY_BG=$PROWPT_GIT_STAGED_BG
+            PROWPT_GIT_DISPLAY_FG=$PROWPT_GIT_STAGED_FG
+        else
+            PROWPT_GIT_DISPLAY_BG=$PROWPT_GIT_BG
+            PROWPT_GIT_DISPLAY_FG=$PROWPT_GIT_FG
+        fi
+   fi
+    
     PROWPT_GIT_PROMPT="$(__git_ps1 " %s ")"
 }
 
@@ -129,18 +146,18 @@ prowpt_pwd () {
         fi
     fi
 
-    if [ -z ${PROWPT_GIT_PROMPT} ] ;then
+    if [ -z $(git rev-parse --git-dir 2>/dev/null) ] ;then
         echo -n " $(prowpt_ansi_color ${PROWPT_SHELL} reset ${PROWPT_PWD_BG})${PROWPT_SEGMENT_DELIMITER}"
     else
-        echo -n " $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_GIT_BG} ${PROWPT_PWD_BG})${PROWPT_SEGMENT_DELIMITER}"
+        echo -n " $(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_GIT_DISPLAY_BG} ${PROWPT_PWD_BG})${PROWPT_SEGMENT_DELIMITER}"
     fi
 }
 
 prowpt_git() {
-    if [ -z ${PROWPT_GIT_PROMPT} ] ;then
+    if [ -z $(git rev-parse --git-dir 2>/dev/null) ] ;then
         echo -n ""
     else
-        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_GIT_BG} ${PROWPT_GIT_FG})${PROWPT_GIT_PROMPT}$(prowpt_ansi_color ${PROWPT_SHELL} reset ${PROWPT_GIT_BG})${PROWPT_SEGMENT_DELIMITER}"
+        echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_GIT_DISPLAY_BG} ${PROWPT_GIT_DISPLAY_FG})${PROWPT_GIT_PROMPT}$(prowpt_ansi_color ${PROWPT_SHELL} reset ${PROWPT_GIT_DISPLAY_BG})${PROWPT_SEGMENT_DELIMITER}"
     fi
 }
 
