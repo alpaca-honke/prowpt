@@ -1,0 +1,37 @@
+# Change Log  
+All notable changes to this project will be documented in this file.  
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),  
+
+## [Unreleased]
+
+### Added
+
+- An icon before the git branch name so that we can see whether we are at a branch or a detached HEAD.
+
+## [23.02.] - 2023-02-
+
+### Added
+
+- Changed the background of the Git segment to change according to the state of the working tree
+- CHANGELOG: This document
+
+### Fixed
+
+- Improved readability of prowpt-core.sh
+
+
+## [23.02.07] - 2023-02-27  
+
+### Added
+
+- prowpt-core.sh: A core script for this program
+- prowpt.bash: A script to localize for bash
+- prowpt.plugin.zsh: A script to localize for zsh
+- git-prompt.sh: A script to display git segment from [https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh).
+- README.md: English discription and instrucction of this program
+- README-ja.md: Japanese discription and instrucction of this program
+- COPYING: Licence (GNU GPL v2.0)
+- The images in the images directory: Some images used in READMEs
+
+[23.02.27]: https://github.com/alpaca-honke/prowpt/tree/ce4a74c12ee88b3a4c3c947459fa8b1c7350fcf6  
