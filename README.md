@@ -2,7 +2,8 @@
 # Prowpt - Simple, lightweight, and customizable Powerline-like prompt theme for Bash and Zsh  
 ![GitHub top language](https://img.shields.io/github/languages/top/alpaca-honke/prowpt?style=flat-square)
 ![GitHub repo size](https://img.shields.io/github/repo-size/alpaca-honke/prowpt?style=flat-square)
-![GitHub](https://img.shields.io/github/license/alpaca-honke/prowpt?style=flat-square)
+![GitHub license](https://img.shields.io/github/license/alpaca-honke/prowpt?style=flat-square)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/alpaca-honke/prowpt?label=latest%20version%20%28tag%29&style=flat-square)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/alpaca-honke/prowpt/main?label=last%20commit%20%28main%29&style=flat-square)
 ## Screenshot  
 ![Screenshot](images/Screenshot.png)  
@@ -35,7 +36,7 @@ Note: Syantax highlighting is not included.
     - [Other Customization](#other-customization)
   - [Contributing](#contributing)
   - [Contact Me](#contact-me)
-  - [Licence](#licence)
+  - [License](#license)
 
 
 ## Features  
@@ -241,7 +242,7 @@ If you have any problems,
 - Open an issue if it is about this program.  
 - If you don't have a GitHub account, or have other reasons to think you shouldn't open an issue of it, contact me via Twitter DM: [Twitter @alpaca_honke](https://twitter.com/alpaca_honke).  
 
-## Licence  
+## License  
 Prowpt is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by  the Free Software Foundation, version 2.0 of the License.
 
 Prowpt is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
