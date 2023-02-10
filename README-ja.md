@@ -40,6 +40,7 @@
 
 ## 特徴  
 - Zinit や Oh-My-Zsh などの一般的なプラグインマネージャで簡単にプラグインを管理できる  
+- Git ブランチの状態によって表示や色が変わる  
 - コードが単純なため、カスタマイズが容易  
 - カスタマイズ可能な変数が多い  
 - リポジトリが軽量  
@@ -204,6 +205,10 @@ GIT_PS1_SHOWUPSTREAM=""
 | PROWPT_PWD_HOME_BG | ホームディレクトリのセグメントの背景色 (```PROWPT_PWD_HOME_HIGHLIGHT="no"``` の場合) | ```31``` |  
 | PROWPT_GIT_FG | Git セグメントの前景色 | ```236``` |  
 | PROWPT_GIT_BG｜Git セグメントの背景色 | ```148``` |  
+| PROWPT_GIT_DIRTY_FG | Dirty 時の Git セグメントの前景色 | ```253``` |  
+| PROWPT_GIT_DIRTY_BG | Dirty 時の Git セグメントの背景色 | ```166``` |  
+| PROWPT_GIT_STAGED_FG | ステージングされたファイルがあるときの Git セグメントの前景色 | ```236``` |  
+| PROWPT_GIT_STAGED_BG | ステージングされたファイルがあるときの Git セグメントの背景色 | ```178``` |  
 | PROWPT_PROMPT_FG | 最後の（2行目）セグメントの前景色 | ```253``` |  
 | PROWPT_PROMPT_BG | 最後の（2行目）セグメントの背景色 | ```237``` |  
 | PROWPT_PROMPT_ERROR_FG | 最後の（2行目）セグメントの前景色（終了ステータスが0でない場合） | ```253``` |  
@@ -235,8 +240,10 @@ Git セグメントでは、[https://github.com/git/git/blob/master/contrib/comp
 - GitHub のアカウントを持っていない、または他にissue を開くべきでない理由がある場合は、Twitter の DM: [Twitter @alpaca_honke](https://twitter.com/alpaca_honke) に連絡してください。  
 
 ## ライセンス  
-Prowpt は GNU General Public Licence version 2.0 の下で配布されています。  
-このプログラムは、商品性や特定目的への適合性の暗黙の保証もなく、いかなる保証もなく頒布されます。  
+Prowpt はフリーソフトウェアです。あなたは Free Software Foundation によって発行された GNU General Public Licence version 2.0 のもとで頒布、改変できます。  
+
+Prowpt はこれが有用であることを願って頒布されますが、市場性や特定の目的への適合性に関する暗黙の保証も含め、一切の保証はありません。  
+
 詳しくは [COPYING](COPYING) または [GNU General Public Licence version 2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), 及び [Licenses - GNU Project - Free Software Foundation](https://www.gnu.org/licenses/) を参照してください。  
 
 Copyright (C) 2023 Alkappa/alpaca-honke  

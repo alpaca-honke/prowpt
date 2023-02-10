@@ -40,6 +40,7 @@ Note: Syantax highlighting is not included.
 
 ## Features  
 - Easy to manage plugin with common plugin managers like Zinit, or Oh-My-Zsh, e.t.c.  
+- The display and colors change depending on the Git branch state.  
 - Easy to customize due to simpler code  
 - Many customizable variables  
 - Lightweight repository  
@@ -206,6 +207,10 @@ You can set prompt colors using ANSI 256 colors.
 | PROWPT_PWD_HOME_BG | Home directory segment background color (when you set ```PROWPT_PWD_HOME_HIGHLIGHT="no"```) | ```31``` |  
 | PROWPT_GIT_FG | Git status segment foreground color | ```236``` |  
 | PROWPT_GIT_BG | Git status segment background color | ```148``` |  
+| PROWPT_GIT_DIRTY_FG | Git status segment foreground color when working tree is dirty | ```253``` |  
+| PROWPT_GIT_DIRTY_BG | Git status segment background color when working tree is dirty | ```166``` |  
+| PROWPT_GIT_STAGED_FG | Git status segment foreground color when there are some staged files | ```236``` |  
+| PROWPT_GIT_STAGED_BG | Git status segment background color when there are some staged files | ```178``` |  
 | PROWPT_PROMPT_FG | Last (second line) segment foreground color | ```253``` |  
 | PROWPT_PROMPT_BG | Last (second line) segment background color | ```237``` |  
 | PROWPT_PROMPT_ERROR_FG | Last (second line) segment foreground color (when exit status is not 0) | ```253``` |  
@@ -237,8 +242,10 @@ If you have any problems,
 - If you don't have a GitHub account, or have other reasons to think you shouldn't open an issue of it, contact me via Twitter DM: [Twitter @alpaca_honke](https://twitter.com/alpaca_honke).  
 
 ## Licence  
-Prowpt is destributed under the GNU General Public Licence version 2.0.  
-This program is distributed without any warranty; without even the implied warranty of merchantability or fitness for a particular purpose.  
+Prowpt is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by  the Free Software Foundation, version 2.0 of the License.
+
+Prowpt is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+
 See [COPYING](COPYING) or [GNU General Public Licence version 2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), and [Licenses - GNU Project - Free Software Foundation](https://www.gnu.org/licenses/) for more details.  
 
 Copyright (C) 2023 Alkappa/alpaca-honke  
