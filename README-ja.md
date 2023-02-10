@@ -1,6 +1,6 @@
 **There is [an English README](README.md).**  
 # Prowpt - シンプルで軽量、カスタマイズ可能な Bash、Zsh 用 Powerline 風プロンプトテーマ  
-![GitHub top language](https://img.shields.io/github/languages/top/alpaca-honke/prowpt?style=flat-square)![](https://images.shelds.io/github/languages/top/alpaca-honke/prowpt)
+![GitHub top language](https://img.shields.io/github/languages/top/alpaca-honke/prowpt?style=flat-square)
 ![GitHub repo size](https://img.shields.io/github/repo-size/alpaca-honke/prowpt?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/alpaca-honke/prowpt?style=flat-square)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/alpaca-honke/prowpt/main?label=last%20commit%20%28main%29&style=flat-square)  
