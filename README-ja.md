@@ -85,7 +85,7 @@ HEAD とアップストリームとの差
 #### Sheldon  
 1. 次のコマンドを実行  
     ```bash
-    sheldon add prowpt --github alpaca-honke/prowpt --use '*.bash'
+    sheldon add prowpt --github alpaca-honke/prowpt --use '*.bash' --branch main
     ```
 1. ターミナルを再起動  
 
@@ -131,14 +131,14 @@ HEAD とアップストリームとの差
 #### Zplug  
 1. 以下の行を ``~/.zshrc`` に追加  
     ```zsh:.zshrc
-    zplug "alpaca-honke/prowpt", as:plugin
+    zplug "alpaca-honke/prowpt", as:plugin, at:main
     ```
 1. ターミナルを再起動  
 
 #### Sheldon  
 1. 以下のコマンドを実行  
     ``zsh
-    sheldon add prowpt --github alpaca-honke/prowpt
+    sheldon add prowpt --github alpaca-honke/prowpt --branch main
     ```
 1. ターミナルを再起動  
 

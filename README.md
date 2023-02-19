@@ -86,7 +86,7 @@ HEAD and upstream defference
 #### Sheldon  
 1. Run the following command  
     ```bash
-    sheldon add prowpt --github alpaca-honke/prowpt --use '*.bash'
+    sheldon add prowpt --github alpaca-honke/prowpt --use '*.bash' --branch main
     ```
 1. Restart your terminal  
 
@@ -132,14 +132,14 @@ HEAD and upstream defference
 #### Zplug  
 1. Add the following line to ```~/.zshrc```  
     ```zsh:.zshrc
-    zplug "alpaca-honke/prowpt", as:plugin
+    zplug "alpaca-honke/prowpt", as:plugin, at:main
     ```
 1. Restart your terminal  
 
 #### Sheldon  
 1. Run the following command  
     ```zsh
-    sheldon add prowpt --github alpaca-honke/prowpt
+    sheldon add prowpt --github alpaca-honke/prowpt --branch main
     ```
 1. Restart your terminal  
 
