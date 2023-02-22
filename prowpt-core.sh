@@ -39,6 +39,8 @@ PROWPT_GIT_DIRTY_BG="166"
 PROWPT_GIT_DIRTY_FG="253"
 PROWPT_GIT_STAGED_BG="178"
 PROWPT_GIT_STAGED_FG="236"
+PROWPT_GIT_HEAD_BRANCH=$'\ue0a0'
+PROWPT_GIT_HEAD_DETACHED=$'\ue729'
 PROWPT_PROMPT_BG="237"
 PROWPT_PROMPT_FG="253"
 PROWPT_PROMPT_ERROR_BG="5"
@@ -91,6 +93,12 @@ prowpt_init() {
             PROWPT_GIT_DISPLAY_FG=$PROWPT_GIT_FG
         fi
    fi
+   
+   if [ $(git rev-parse --abbrev-ref HEAD) = "HEAD" ] ;then
+        PROWPT_GIT_HEAD=0
+    else
+        PROWPT_GIT_HEAD=1
+    fi
     
     PROWPT_GIT_PROMPT="$(__git_ps1 " %s ")"
 }
@@ -193,6 +201,11 @@ prowpt_git() {
         echo -n ""
     else
         echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_GIT_DISPLAY_BG} ${PROWPT_GIT_DISPLAY_FG})"
+        if [ $PROWPT_GIT_HEAD -eq 0 ] ;then
+            echo -n " $PROWPT_GIT_HEAD_DETACHED"
+        elif [ $PROWPT_GIT_HEAD -eq 1 ] ;then
+            echo -n " $PROWPT_GIT_HEAD_BRANCH"
+        fi
         echo -n "${PROWPT_GIT_PROMPT}"
         echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} reset ${PROWPT_GIT_DISPLAY_BG})"
         echo -n "${PROWPT_SEGMENT_DELIMITER}"
