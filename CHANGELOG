@@ -1,15 +1,15 @@
 # Change Log  
 All notable changes to this project will be documented in this file.  
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),  
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).  
 
 ## [Unreleased]
 
 ### Added
 
-- An icon before the git branch name so that we can see whether we are at a branch or a detached HEAD.
+- An icon before the git branch name so that we can see whether you are at a branch or a detached HEAD.
 
-## [23.02.] - 2023-02-
+## [23.02.18] - 2023-02-18
 
 ### Added
 
@@ -34,4 +34,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - COPYING: Licence (GNU GPL v2.0)
 - The images in the images directory: Some images used in READMEs
 
-[23.02.27]: https://github.com/alpaca-honke/prowpt/tree/ce4a74c12ee88b3a4c3c947459fa8b1c7350fcf6  
+[]:
+[23.02.18]: https://github.com/alpaca-honke/prowpt/tree/91e19f0f1f827eb569081f3705bb0633e55b5979
+[23.02.07]: https://github.com/alpaca-honke/prowpt/tree/ce4a74c12ee88b3a4c3c947459fa8b1c7350fcf6  
