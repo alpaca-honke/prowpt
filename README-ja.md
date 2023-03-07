@@ -25,6 +25,7 @@
       - [Manual](#manual-1)
       - [Oh-My-Zsh](#oh-my-zsh)
       - [Zinit](#zinit)
+    - [Antigen](#antigen)
       - [Zplug](#zplug)
       - [Sheldon](#sheldon-1)
   - [カスタマイズ](#カスタマイズ)
@@ -64,8 +65,8 @@ Fish Shellでは動作しません。
 - 未追跡ファイル: ```%```  
 
 HEAD とアップストリームとの差  
-- HEADが先行: ```<```  
-- アップストリームが先行: ``>``  
+- アップストリームが先行: ```<```  
+- HEADが先行: ```>```  
 - 分岐している: ``<>``  
 - up-to-date: ```=```  
 
@@ -76,7 +77,7 @@ HEAD とアップストリームとの差
     ```bash
     git clone https://github.com/alpaca-honke/prowpt.git  ~/.prowpt/
     ```
-1. 以下の行を ``~/.bashrc`` の ``PS1`` 設定の下に追加  
+1. 以下の行を ```~/.bashrc``` の ```PS1``` 設定の下に追加  
     ```bash:.bashrc
     source ~/.prowpt/prowpt.bash
     ```
@@ -101,7 +102,7 @@ HEAD とアップストリームとの差
     promptinit
     prompt adam1
     ```
-1. ```~/.zshrc``` の ```PROMPT``` 設定の下に、以下の行を追加  
+1. ```~/.zshrc``` に以下の行を追加  
     ```zsh:.zshrc
     source ~/.prowpt/prowpt.plugin.zsh
     ```
@@ -112,7 +113,7 @@ HEAD とアップストリームとの差
     ```zsh
     git clone https://github.com/alpaca-honke/prowpt.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/prowpt/
     ```
-1. ```~/.zshrc```内のOh-My-Zsh のプラグインリストに ``prowpt`` を追加  
+1. ```~/.zshrc```内のOh-My-Zsh のプラグインリストに ```prowpt``` を追加  
     ```zsh:.zshrc
     plugins=(
         #他のプラグイン
@@ -128,8 +129,15 @@ HEAD とアップストリームとの差
     ```
 1. ターミナルを再起動  
 
+### Antigen  
+1. 以下の行を ```~/.zshrc``` に追加  
+   ```zsh
+   antigen bundle alpaca-honke/prowpt
+   ```
+1. ターミナルを再起動  
+
 #### Zplug  
-1. 以下の行を ``~/.zshrc`` に追加  
+1. 以下の行を ```~/.zshrc``` に追加  
     ```zsh:.zshrc
     zplug "alpaca-honke/prowpt", as:plugin, at:main
     ```
@@ -137,13 +145,13 @@ HEAD とアップストリームとの差
 
 #### Sheldon  
 1. 以下のコマンドを実行  
-    ``zsh
+    ```zsh
     sheldon add prowpt --github alpaca-honke/prowpt --branch main
     ```
 1. ターミナルを再起動  
 
 ## カスタマイズ  
-``~/.config/prowpt/config.sh`` を使用すると、簡単にカスタマイズすることができます。  
+```~/.config/prowpt/config.sh``` を使用すると、簡単にカスタマイズすることができます。  
 1. ディレクトリを作成します。  
     ```sh
     mkdir ~/.config/prowpt/
@@ -227,7 +235,7 @@ Git セグメントでは、[https://github.com/git/git/blob/master/contrib/comp
 | ---- | ---- | ---- |  
 | GIT_PS1_SHOWDIRTYSTATE | これを空でない値に設定すると、ブランチ名の隣にステージされていない変更(*)とステージされた変更(+)が表示されます。| ```yes``` |  
 | GIT_PS1_SHOWSTASHSTATE | これを空でない値に設定すると、stashされた変更があれば、ブランチ名の横に '$' が表示されます。| ```yes``` |  
-| GIT_PS1_SHOWUNTRACKEDFILES | 空ではない値を設定することで、もし未追跡のファイルがあれば、ブランチ名の横に'%'が表示されます。| ```yes``` |  
+| GIT_PS1_SHOWUNTRACKEDFILES | これを空ではない値に設定すると、もし未追跡のファイルがあれば、ブランチ名の横に'%'が表示されます。| ```yes``` |  
 | GIT_PS1_SHOWUPSTREAM | ```GIT_PS1_SHOWUPSTREAM="auto"``` と設定すると、HEAD とその上流との差分がブランチ名の横に表示されるようになります。<" 上流が先行、">" HEADが先行、"<>" は分岐、"=" は差がないことを表します。| ```auto``` |  
 
 詳しくは [https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) もしくは [prowpt/git-prompt.sh](git-prompt.sh) を参照してください。その他のカスタマイズ可能な変数もそこに書かれています。  

@@ -24,6 +24,7 @@ Note: Syantax highlighting is not included.
       - [Manual](#manual-1)
       - [Oh-My Zsh](#oh-my-zsh)
       - [Zinit](#zinit)
+    - [Antigen](#antigen)
       - [Zplug](#zplug)
       - [Sheldon](#sheldon-1)
   - [Customization](#customization)
@@ -42,7 +43,7 @@ Note: Syantax highlighting is not included.
 ## Features  
 - Easy to manage plugin with common plugin managers like Zinit, or Oh-My-Zsh, e.t.c.  
 - The display and colors change depending on the Git branch state.  
-- Easy to customize due to simpler code  
+- Easy to custom due to simpler code  
 - Many customizable variables  
 - Lightweight repository  
 
@@ -102,7 +103,7 @@ HEAD and upstream defference
     promptinit
     prompt adam1
     ```
-1. In ```~/.zshrc```, add the following line under the ```PROMPT``` settings in ```~/.zshrc```  
+1. Add the following line in ```~/.zshrc```  
     ```zsh:.zshrc
     source ~/.prowpt/prowpt.plugin.zsh
     ```
@@ -123,11 +124,18 @@ HEAD and upstream defference
 1. Restart your terminal  
 
 #### Zinit  
-1. Run the following command  
+1. Add the following line to ```~/.zshrc```  
     ```zsh
     zinit light alpaca-honke/prowpt
     ```
 1. Restart your terminal  
+
+### Antigen  
+1. Run the following command  
+   ```zsh
+   antigen bundle alpaca-honke/prowpt
+   ```
+2. Restart your terminal  
 
 #### Zplug  
 1. Add the following line to ```~/.zshrc```  
@@ -144,7 +152,7 @@ HEAD and upstream defference
 1. Restart your terminal  
 
 ## Customization  
-You can easily customize using ```~/.config/prowpt/config.sh```.  
+You can easily to custom it using ```~/.config/prowpt/config.sh```.  
 1. Create a directory  
     ```sh
     mkdir ~/.config/prowpt/
@@ -155,7 +163,7 @@ You can easily customize using ```~/.config/prowpt/config.sh```.
     ```
 
 ### Customizable Value   
-You can easily customize prompt by setting some variables like this:  
+You can easily to custom prompt by setting some variables like this:  
 ```sh:config.sh
 PROWPT_SEGMENT_SEPARATOR=$'\ue0b8'
 PROWPT_CURRENT_TIME_BG="5"
@@ -235,7 +243,7 @@ The customizable variables follow this script.
 See [https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) or [prowpt/git-prompt.sh](git-prompt.sh) for details. Other customizable variables are also written there.  
 
 ### Other Customization  
-If you want to customize but there are no customizable variables for it, overwrite ```prowpt-core.sh``` or any other files.   
+If you want to custom but there are no customizable variables for it, overwrite ```prowpt-core.sh``` or any other files.   
 
 ## Contributing  
 I know this program is not complete.We welcome your contribution to this program. If you are willing to contribute, please make some pull requests.  
