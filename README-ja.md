@@ -253,9 +253,11 @@ Git セグメントでは、[https://github.com/git/git/blob/master/contrib/comp
 同様に、何か問題や質問を見つけたら、issue を作成してください。  
 
 ## お問い合わせ  
-何か問題がある場合、  
+バグなど、何か問題がある場合、  
 - このプログラムに関することであれば、issueを開いてください。   
 - GitHub のアカウントを持っていない、または他にissue を開くべきでない理由がある場合は、Twitter の DM: [Twitter @alpaca_honke](https://twitter.com/alpaca_honke) もしくは [Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSdRuzAmGEqDV4RRd-70JKXD0lAHE6xjEp8Qp5-Jfut-ysQMYQ/viewform) に、 Prowpt についてとの旨を書いた上で連絡してください。  
+
+**注：なにか質問がある場合、 [Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSdRuzAmGEqDV4RRd-70JKXD0lAHE6xjEp8Qp5-Jfut-ysQMYQ/viewform) をご利用ください。 issue を質問に使わないでください。**  
 
 ## ライセンス  
 Prowpt はフリーソフトウェアです。あなたは Free Software Foundation によって発行された GNU General Public Licence version 2.0 のもとで頒布、改変できます。  

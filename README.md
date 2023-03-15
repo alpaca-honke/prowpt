@@ -252,12 +252,14 @@ I know this program is not complete.We welcome your contribution to this program
 - Make changes to forked repo
 - Make pull request(s) to alpaca-honke/prowpt develop branch
 
-In the same way, open an issue if you find some problems or have some questions.  
+In the same way, open an issue if you find some problems or need more features.  
 
 ## Contact Me  
-If you have any problems,  
+If there is/are some bugs or other problems,  
 - Open an issue if it is about this program.  
-- If you don't have a GitHub account, or have other reasons to think you shouldn't open an issue of it, contact me via Twitter DM: [Twitter @alpaca_honke](https://twitter.com/alpaca_honke) , or [Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSdRuzAmGEqDV4RRd-70JKXD0lAHE6xjEp8Qp5-Jfut-ysQMYQ/viewform) (Though it is written in Japanese, you can write in English.) with a note that it is about Prowpt.  
+- If you don't have a GitHub account, or have other reasons to think you shouldn't open an issue of it, contact me via Twitter DM: [Twitter @alpaca_honke](https://twitter.com/alpaca_honke) , or [Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSdRuzAmGEqDV4RRd-70JKXD0lAHE6xjEp8Qp5-Jfut-ysQMYQ/viewform) (Though it is written in Japanese, don't translate your writing to Japanese.) with a note that it is about Prowpt.  
+
+**Note: If you have some questions, use [Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSdRuzAmGEqDV4RRd-70JKXD0lAHE6xjEp8Qp5-Jfut-ysQMYQ/viewform). Don't use the issues to ask some questions.**  
 
 ## License  
 Prowpt is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by  the Free Software Foundation, version 2.0 of the License.
