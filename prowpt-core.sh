@@ -127,7 +127,12 @@ prowpt_ansi_color () {
 
 prowpt_current_time () {
     echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_CURRENT_TIME_BG} ${PROWPT_CURRENT_TIME_FG})"
-    echo -n " ${PROWPT_CURRENT_TIME} "
+	if [ ${VIRTUAL_ENV:-} ] ;then
+		ENVNAME=${VIRTUAL_ENV##*/}
+        echo -n " \ue73c ${ENVNAME} "
+    else
+        echo -n " ${PROWPT_CURRENT_TIME} "
+    fi
     echo -n "$(prowpt_ansi_color ${PROWPT_SHELL} ${PROWPT_USER_BG} ${PROWPT_CURRENT_TIME_BG})"
     echo -n "${PROWPT_SEGMENT_DELIMITER}"
 }
