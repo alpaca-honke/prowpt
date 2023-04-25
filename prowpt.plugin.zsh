@@ -25,6 +25,5 @@ source $( cd "$( dirname "$0" )" && pwd -P)/prowpt-core.sh
 
 precmd () {
     prowpt_init
-    PROMPT="$(prowpt_current_time)$(prowpt_user)$(prowpt_host)$(prowpt_pwd)$(prowpt_git)
-$(prowpt_prompt)%F{0}%f%K{0}%k "
+    PROMPT=$(prowpt_current_time)$(prowpt_user)$(prowpt_host)$(prowpt_pwd)$(prowpt_git)%f%k$'\n'$(prowpt_prompt)%f%k' '
 }

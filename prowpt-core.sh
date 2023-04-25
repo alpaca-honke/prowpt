@@ -118,9 +118,9 @@ prowpt_ansi_color () {
         fi
     elif [ $1 = "zsh" ] ;then
         if [ $2 = "reset" ] ;then
-            echo -n "\e[0m\e[38;5;${3}m"
+            echo -n "%f%k%F{${3}}"
         else
-            echo -n "\e[48;5;${2}m\e[38;5;${3}m"
+            echo -n "%f%k%K{${2}}%F{${3}}"
         fi
     fi
 }
