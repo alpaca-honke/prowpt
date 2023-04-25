@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).  
 
+## [23.04.25] - 2023-04-25
+
+### Added
+
+- Feature displaying Python virtualenv environment in the first segment
+
+### Fixed
+
+- Display shift bug when long command are entered
+
 ## [23.03.15] - 2023-03-15
 
 ### Added

@@ -43,6 +43,7 @@
 ## 特徴  
 - Zinit や Oh-My-Zsh などの一般的なプラグインマネージャで簡単にプラグインを管理できる  
 - Git ブランチの状態によって表示や色が変わる  
+- Python の virtualenv 環境が表示される
 - コードが単純なため、カスタマイズが容易  
 - カスタマイズ可能な変数が多い  
 - リポジトリが軽量  
@@ -53,11 +54,11 @@ Fish Shellでは動作しません。
 - Gitコマンド  
 - [Nerd Fonts](https://www.nerdfonts.com)  
 グリフを表示するために Nerd Fonts が必要です。  
-（カスタマイズしなければ、[Powerline Fonts](https://github.com/powerline/fonts)も使用できます。）  
 - 256色表示可能な端末エミュレータ  
 
 ## 見た目  
 ![プロンプトサンプル](images/prompt-sample.png)  
+Python の virtualenv 環境内にいる場合、最初のセグメントに表示されます。  
 ### Git ステータスアイコン 
 - ステージされていないファイルがある場合: ```*```  
 - ステージングされたファイル: ```+```  

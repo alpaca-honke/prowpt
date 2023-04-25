@@ -43,6 +43,7 @@ Note: Syantax highlighting is not included.
 ## Features  
 - Easy to manage plugin with common plugin managers like Zinit, or Oh-My-Zsh, e.t.c.  
 - The display and colors change depending on the Git branch state.  
+- Python virtualenv environments are displayed.
 - Easy to custom due to simpler code  
 - Many customizable variables  
 - Lightweight repository  
@@ -53,11 +54,11 @@ It does not work on Fish Shell.
 - Git command  
 - [Nerd Fonts](https://www.nerdfonts.com)  
 It needs Nerd Fonts to use glyphs.  
-(If you don't custom it, you can also use [Powerline Fonts](https://github.com/powerline/fonts).)  
 - Terminal emulator that can display 256 colors.  
 
 ## Appearance  
 ![Prompt sample](images/prompt-sample.png)  
+Python virtualenv environment name will be displayed when you are in the environment.  
 ### Git Status Icon 
 If there is/are
 - unstaged file(s): ```*```  
