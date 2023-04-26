@@ -24,7 +24,7 @@ Note: Syantax highlighting is not included.
       - [Manual](#manual-1)
       - [Oh-My Zsh](#oh-my-zsh)
       - [Zinit](#zinit)
-    - [Antigen](#antigen)
+      - [Antigen](#antigen)
       - [Zplug](#zplug)
       - [Sheldon](#sheldon-1)
   - [Customization](#customization)
@@ -131,7 +131,7 @@ HEAD and upstream defference
     ```
 1. Restart your terminal  
 
-### Antigen  
+#### Antigen  
 1. Run the following command  
    ```zsh
    antigen bundle alpaca-honke/prowpt

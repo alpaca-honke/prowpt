@@ -25,7 +25,7 @@
       - [Manual](#manual-1)
       - [Oh-My-Zsh](#oh-my-zsh)
       - [Zinit](#zinit)
-    - [Antigen](#antigen)
+      - [Antigen](#antigen)
       - [Zplug](#zplug)
       - [Sheldon](#sheldon-1)
   - [カスタマイズ](#カスタマイズ)
@@ -130,7 +130,7 @@ HEAD とアップストリームとの差
     ```
 1. ターミナルを再起動  
 
-### Antigen  
+#### Antigen  
 1. 以下の行を ```~/.zshrc``` に追加  
    ```zsh
    antigen bundle alpaca-honke/prowpt
@@ -173,9 +173,9 @@ GIT_PS1_SHOWUPSTREAM=""
 #### 文字列  
 | 変数名 | 説明 | デフォルト |
 | ---- | ---- | ---- |  
-| PROWPT_CURRENT_TIME | 最初のセグメント値 | Bash: ```\t```, Zsh: ```%*``` |  
+| PROWPT_CURRENT_TIME | 最初のセグメント値（Python の virtualenv 環境外のとき） | Bash: ```\t```, Zsh: ```%*``` |  
 | PROWPT_USER | 2番目のセグメントの値 | Bash: ```\u```, Zsh: ```%n``` |
-| PROWPT_HOST | セグメントの3番目の値 | Bash: ```\h```, Zsh: ```%n``` |  
+| PROWPT_HOST | 3番目のセグメントの値 | Bash: ```\h```, Zsh: ```%n``` |  
 | PROWPT_PROMPT | 最後（2行目）のセグメント値 | Bash: ```\$```, Zsh: ```%#``` |  
 | PROWPT_GIT_HEAD_BRANCH | 現在の Git の HEAD がブランチであるときに表示されるアイコン | ```$'\ue0a0'``` |  
 | PROWPT_GIT_HEAD_DETACHED | 現在の Git の HEAD がデタッチドヘッドであるときに表示されるアイコン | ```$'\ue729'``` |  
@@ -184,7 +184,7 @@ GIT_PS1_SHOWUPSTREAM=""
 セグメント (プロンプトのブロック) の区切り文字を設定します。  
 区切り文字は ```$'\ue0b0'``` のようにUniocdeで設定できます。  
 以下はよく使用される区切り文字のリストです。  
-[区切り文字サンプル](images/delimiter-sample.png)  
+![区切り文字サンプル](images/delimiter-sample.png)  
 注：PWD区切り文字にはリスト中のe0b1, e0b5, e0b9, e0bb, e0c1, e0cd、セグメント区切り文字には他の文字を使用することができます。  
 垂直なセグメント区切り文字を使用する場合は、```PROWPT_SEGMENT_DELIMITER=""``` と指定してください。PWD区切り文字も同じようにするには、```|``` （パイプ）を指定してください。  
 
