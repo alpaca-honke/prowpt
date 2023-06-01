@@ -50,6 +50,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - COPYING: Licence (GNU GPL v2.0)
 - The images in the images directory: Some images used in READMEs
 
+[23.06.01]: https://github.com/alpaca-honke/prowpt/tree/f997c48102fd23c171fed8cc50451a7115f0e061
 [23.04.25]: https://github.com/alpaca-honke/prowpt/tree/829feef10219212f5835c3713a27821c5d400835
 [23.03.15]: https://github.com/alpaca-honke/prowpt/tree/c9465dcb987a4e1f3727db1ea064e950f8953fc8
 [23.02.18]: https://github.com/alpaca-honke/prowpt/tree/91e19f0f1f827eb569081f3705bb0633e55b5979
