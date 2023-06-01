@@ -95,7 +95,7 @@ prowpt_init() {
             PROWPT_GIT_DISPLAY_FG=$PROWPT_GIT_FG
         fi
 
-        if [ $(git rev-parse --abbrev-ref HEAD) = "HEAD" ] ;then
+        if [ $(git rev-parse --abbrev-ref HEAD 2>/dev/null) = "HEAD" ] ;then
             PROWPT_GIT_HEAD=0
             PROWPT_GIT_DISPLAY_BG=$PROWPT_GIT_DETACHED_BG
             PROWPT_GIT_DISPLAY_FG=$PROWPT_GIT_DETACHED_FG
