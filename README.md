@@ -269,4 +269,4 @@ Prowpt is distributed in the hope that it will be useful, but WITHOUT ANY WARRAN
 
 See [COPYING](COPYING) or [GNU General Public Licence version 2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), and [Licenses - GNU Project - Free Software Foundation](https://www.gnu.org/licenses/) for more details.  
 
-Copyright (C) 2023 Alkappa/alpaca-honke  
+Copyright (C) 2023 あるかっぱ/アルパカ本家 Alkappa/alpaca-honke  

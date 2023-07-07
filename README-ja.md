@@ -267,4 +267,4 @@ Prowpt はこれが有用であることを願って頒布されますが、商�
 
 詳しくは [COPYING](COPYING) または [GNU General Public Licence version 2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), 及び [Licenses - GNU Project - Free Software Foundation](https://www.gnu.org/licenses/) を参照してください。  
 
-Copyright (C) 2023 Alkappa/alpaca-honke  
+Copyright (C) 2023 あるかっぱ/アルパカ本家 Alkappa/alpaca-honke  
