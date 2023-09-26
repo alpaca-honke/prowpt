@@ -38,6 +38,7 @@
     - [その他のカスタマイズ](#その他のカスタマイズ)
   - [Contributing](#contributing)
   - [お問い合わせ](#お問い合わせ)
+    - [連絡先](#連絡先)
   - [ライセンス](#ライセンス)
 
 ## 特徴  
@@ -60,16 +61,16 @@ Fish Shellでは動作しません。
 ![プロンプトサンプル](images/prompt-sample.png)  
 Python の virtualenv 環境内にいる場合、最初のセグメントに表示されます。  
 ### Git ステータスアイコン 
-- ステージされていないファイルがある場合: ```*```  
-- ステージングされたファイル: ```+```  
-- 退避（stash）されたファイル: ```$```  
-- 未追跡ファイル: ```%```  
+- ステージされていないファイルがある場合: `*`  
+- ステージングされたファイル: `+`  
+- 退避（stash）されたファイル: `$`  
+- 未追跡ファイル: `%`  
 
 HEAD とアップストリームとの差  
-- アップストリームが先行: ```<```  
-- HEADが先行: ```>```  
+- アップストリームが先行: `<`  
+- HEADが先行: `>`  
 - 分岐している: ``<>``  
-- up-to-date: ```=```  
+- up-to-date: `=`  
 
 ## インストール方法  
 ### Bash  
@@ -78,7 +79,7 @@ HEAD とアップストリームとの差
     ```bash
     git clone https://github.com/alpaca-honke/prowpt.git  ~/.prowpt/
     ```
-1. 以下の行を ```~/.bashrc``` の ```PS1``` 設定の下に追加  
+1. 以下の行を `~/.bashrc` の `PS1` 設定の下に追加  
     ```bash:.bashrc
     source ~/.prowpt/prowpt.bash
     ```
@@ -97,13 +98,13 @@ HEAD とアップストリームとの差
     ```zsh
     git clone https://github.com/alpaca-honke/prowpt.git ~/.prowpt/
     ```
-1. ```~/.zshrc``` の以下の行をコメントアウト  
+1. `~/.zshrc` の以下の行をコメントアウト  
     ```zsh:.zshrc
     autoload -Uz promptinit
     promptinit
     prompt adam1
     ```
-1. ```~/.zshrc``` に以下の行を追加  
+1. `~/.zshrc` に以下の行を追加  
     ```zsh:.zshrc
     source ~/.prowpt/prowpt.plugin.zsh
     ```
@@ -114,7 +115,7 @@ HEAD とアップストリームとの差
     ```zsh
     git clone https://github.com/alpaca-honke/prowpt.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/prowpt/
     ```
-1. ```~/.zshrc```内のOh-My-Zsh のプラグインリストに ```prowpt``` を追加  
+1. `~/.zshrc`内のOh-My-Zsh のプラグインリストに `prowpt` を追加  
     ```zsh:.zshrc
     plugins=(
         #他のプラグイン
@@ -131,14 +132,14 @@ HEAD とアップストリームとの差
 1. ターミナルを再起動  
 
 #### Antigen  
-1. 以下の行を ```~/.zshrc``` に追加  
+1. 以下の行を `~/.zshrc` に追加  
    ```zsh
    antigen bundle alpaca-honke/prowpt
    ```
 1. ターミナルを再起動  
 
 #### Zplug  
-1. 以下の行を ```~/.zshrc``` に追加  
+1. 以下の行を `~/.zshrc` に追加  
     ```zsh:.zshrc
     zplug "alpaca-honke/prowpt", as:plugin, at:main
     ```
@@ -152,7 +153,7 @@ HEAD とアップストリームとの差
 1. ターミナルを再起動  
 
 ## カスタマイズ  
-```~/.config/prowpt/config.sh``` を使用すると、簡単にカスタマイズすることができます。  
+`~/.config/prowpt/config.sh` を使用すると、簡単にカスタマイズすることができます。  
 1. ディレクトリを作成します。  
     ```sh
     mkdir ~/.config/prowpt/
@@ -173,31 +174,31 @@ GIT_PS1_SHOWUPSTREAM=""
 #### 文字列  
 | 変数名 | 説明 | デフォルト |
 | ---- | ---- | ---- |  
-| PROWPT_CURRENT_TIME | 最初のセグメント値（Python の virtualenv 環境外のとき） | Bash: ```\t```, Zsh: ```%*``` |  
-| PROWPT_USER | 2番目のセグメントの値 | Bash: ```\u```, Zsh: ```%n``` |
-| PROWPT_HOST | 3番目のセグメントの値 | Bash: ```\h```, Zsh: ```%n``` |  
-| PROWPT_PROMPT | 最後（2行目）のセグメント値 | Bash: ```\$```, Zsh: ```%#``` |  
-| PROWPT_GIT_HEAD_BRANCH | 現在の Git の HEAD がブランチであるときに表示されるアイコン | ```$'\ue0a0'``` |  
-| PROWPT_GIT_HEAD_DETACHED | 現在の Git の HEAD がデタッチドヘッドであるときに表示されるアイコン | ```$'\ue729'``` |  
+| PROWPT_CURRENT_TIME | 最初のセグメント値（Python の virtualenv 環境外のとき） | Bash: `\t`, Zsh: `%*` |  
+| PROWPT_USER | 2番目のセグメントの値 | Bash: `\u`, Zsh: `%n` |
+| PROWPT_HOST | 3番目のセグメントの値 | Bash: `\h`, Zsh: `%n` |  
+| PROWPT_PROMPT | 最後（2行目）のセグメント値 | Bash: `\$`, Zsh: `%#` |  
+| PROWPT_GIT_HEAD_BRANCH | 現在の Git の HEAD がブランチであるときに表示されるアイコン | `$'\ue0a0'` |  
+| PROWPT_GIT_HEAD_DETACHED | 現在の Git の HEAD がデタッチドヘッドであるときに表示されるアイコン | `$'\ue729'` |  
 
 #### 区切り文字  
 セグメント (プロンプトのブロック) の区切り文字を設定します。  
-区切り文字は ```$'\ue0b0'``` のようにUniocdeで設定できます。  
+区切り文字は `$'\ue0b0'` のようにUniocdeで設定できます。  
 以下はよく使用される区切り文字のリストです。  
 ![区切り文字サンプル](images/delimiter-sample.png)  
 注：PWD区切り文字にはリスト中のe0b1, e0b5, e0b9, e0bb, e0c1, e0cd、セグメント区切り文字には他の文字を使用することができます。  
-垂直なセグメント区切り文字を使用する場合は、```PROWPT_SEGMENT_DELIMITER=""``` と指定してください。PWD区切り文字も同じようにするには、```|``` （パイプ）を指定してください。  
+垂直なセグメント区切り文字を使用する場合は、`PROWPT_SEGMENT_DELIMITER=""` と指定してください。PWD区切り文字も同じようにするには、`|` （パイプ）を指定してください。  
 
 | 変数名 | 説明 | デフォルト |  
 | ---- | --- | ---- |  
-| PROWPT_SEGMENT_DELIMITER | セグメント区切り文字 | ```$'\ue0b0'``` |  
-| PROWPT_PWD_DELIMITER | ```/``` の代わりとして表示されるカレントディレクトリの区切り文字 | ```$'\ue0b1'``` |  
+| PROWPT_SEGMENT_DELIMITER | セグメント区切り文字 | `$'\ue0b0'` |  
+| PROWPT_PWD_DELIMITER | `/` の代わりとして表示されるカレントディレクトリの区切り文字 | `$'\ue0b1'` |  
 
 #### ホームディレクトリ（~）をハイライトするかどうか  
 ホームディレクトリをハイライト表示させたい場合は  
-```PROWPT_PWD_HOME_HIGHLIGHT="yes"``` と設定してください。  
+`PROWPT_PWD_HOME_HIGHLIGHT="yes"` と設定してください。  
 そうでない場合は  
-```PROWPT_PWD_HOME_HIGHLIGHT="no"``` または他の値に設定してください。  
+`PROWPT_PWD_HOME_HIGHLIGHT="no"` または他の値に設定してください。  
 
 #### プロンプトの色  
 プロンプトの色は、ANSIの256色で設定することができます。  
@@ -205,28 +206,28 @@ GIT_PS1_SHOWUPSTREAM=""
 
 | 変数名 | 説明 | デフォルト |  
 | ---- | ---- | ---- |  
-| PROWPT_CURRENT_TIME_FG | 最初のセグメントの前景色 | ```253``` |  
-| PROWPT_CURRENT_TIME_BG | 最初のセグメントの背景色 | ```31``` |  
-| PROWPT_USER_FG | 2つ目のセグメントの前景色 | ```253``` |  
-| PROWPT_USER_BG | 2つ目のセグメントの背景色 | ```242``` |  
-| PROWPT_HOST_FG | 3つ目のセグメントの前景色 | ```253``` |  
-| PROWPT_HOST_BG | 3つ目のセグメントの背景色 | ```239``` |  
-| PROWPT_PWD_FG | PWD セグメントの前景色 | ```253``` |  
-| PROWPT_PWD_BG | PWD セグメントの背景色 | ```237``` |  
-| PROWPT_PWD_HOME_FG | ホームディレクトリのセグメントの前景色 (```PROWPT_PWD_HOME_HIGHLIGHT="yes"``` の場合) | ```253``` |  
-| PROWPT_PWD_HOME_BG | ホームディレクトリのセグメントの背景色 (```PROWPT_PWD_HOME_HIGHLIGHT="no"``` の場合) | ```31``` |  
-| PROWPT_GIT_FG | Git セグメントの前景色 | ```236``` |  
-| PROWPT_GIT_BG | Git セグメントの背景色 | ```148``` |  
-| PROWPT_GIT_DIRTY_FG | Dirty 時の Git セグメントの前景色 | ```253``` |  
-| PROWPT_GIT_DIRTY_BG | Dirty 時の Git セグメントの背景色 | ```166``` |  
-| PROWPT_GIT_STAGED_FG | ステージングされたファイルがあるときの Git セグメントの前景色 | ```236``` |  
-| PROWPT_GIT_STAGED_BG | ステージングされたファイルがあるときの Git セグメントの背景色 | ```178``` |  
-| PROWPT_GIT_DETACHED_FG | 現在の HEAD がデタッチドヘッドのときの Git セグメントの前景色 | ```253``` |  
-| PROWPT_GIT_DETACHED_BG | 現在の HEAD がデタッチドヘッドのときの Git セグメントの背景色 | ```103``` |  
-| PROWPT_PROMPT_FG | 最後の（2行目）セグメントの前景色 | ```253``` |  
-| PROWPT_PROMPT_BG | 最後の（2行目）セグメントの背景色 | ```237``` |  
-| PROWPT_PROMPT_ERROR_FG | 最後の（2行目）セグメントの前景色（終了ステータスが0でない場合） | ```253``` |  
-| PROWPT_PROMPT_ERROR_BG | 最後の（2行目）セグメントの背景色（終了ステータスが0でない場合） | ```5``` |  
+| PROWPT_CURRENT_TIME_FG | 最初のセグメントの前景色 | `253` |  
+| PROWPT_CURRENT_TIME_BG | 最初のセグメントの背景色 | `31` |  
+| PROWPT_USER_FG | 2つ目のセグメントの前景色 | `253` |  
+| PROWPT_USER_BG | 2つ目のセグメントの背景色 | `242` |  
+| PROWPT_HOST_FG | 3つ目のセグメントの前景色 | `253` |  
+| PROWPT_HOST_BG | 3つ目のセグメントの背景色 | `239` |  
+| PROWPT_PWD_FG | PWD セグメントの前景色 | `253` |  
+| PROWPT_PWD_BG | PWD セグメントの背景色 | `237` |  
+| PROWPT_PWD_HOME_FG | ホームディレクトリのセグメントの前景色 (`PROWPT_PWD_HOME_HIGHLIGHT="yes"` の場合) | `253` |  
+| PROWPT_PWD_HOME_BG | ホームディレクトリのセグメントの背景色 (`PROWPT_PWD_HOME_HIGHLIGHT="no"` の場合) | `31` |  
+| PROWPT_GIT_FG | Git セグメントの前景色 | `236` |  
+| PROWPT_GIT_BG | Git セグメントの背景色 | `148` |  
+| PROWPT_GIT_DIRTY_FG | Dirty 時の Git セグメントの前景色 | `253` |  
+| PROWPT_GIT_DIRTY_BG | Dirty 時の Git セグメントの背景色 | `166` |  
+| PROWPT_GIT_STAGED_FG | ステージングされたファイルがあるときの Git セグメントの前景色 | `236` |  
+| PROWPT_GIT_STAGED_BG | ステージングされたファイルがあるときの Git セグメントの背景色 | `178` |  
+| PROWPT_GIT_DETACHED_FG | 現在の HEAD がデタッチドヘッドのときの Git セグメントの前景色 | `253` |  
+| PROWPT_GIT_DETACHED_BG | 現在の HEAD がデタッチドヘッドのときの Git セグメントの背景色 | `103` |  
+| PROWPT_PROMPT_FG | 最後の（2行目）セグメントの前景色 | `253` |  
+| PROWPT_PROMPT_BG | 最後の（2行目）セグメントの背景色 | `237` |  
+| PROWPT_PROMPT_ERROR_FG | 最後の（2行目）セグメントの前景色（終了ステータスが0でない場合） | `253` |  
+| PROWPT_PROMPT_ERROR_BG | 最後の（2行目）セグメントの背景色（終了ステータスが0でない場合） | `5` |  
 
 #### Git セグメント  
 Git セグメントでは、[https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) を使用しています。  
@@ -234,15 +235,15 @@ Git セグメントでは、[https://github.com/git/git/blob/master/contrib/comp
 
 | 変数 | 説明 | デフォルト |  
 | ---- | ---- | ---- |  
-| GIT_PS1_SHOWDIRTYSTATE | これを空でない値に設定すると、ブランチ名の隣にステージされていない変更(*)とステージされた変更(+)が表示されます。| ```yes``` |  
-| GIT_PS1_SHOWSTASHSTATE | これを空でない値に設定すると、stashされた変更があれば、ブランチ名の横に '$' が表示されます。| ```yes``` |  
-| GIT_PS1_SHOWUNTRACKEDFILES | これを空ではない値に設定すると、もし未追跡のファイルがあれば、ブランチ名の横に'%'が表示されます。| ```yes``` |  
-| GIT_PS1_SHOWUPSTREAM | ```GIT_PS1_SHOWUPSTREAM="auto"``` と設定すると、HEAD とその上流との差分がブランチ名の横に表示されるようになります。<" 上流が先行、">" HEADが先行、"<>" は分岐、"=" は差がないことを表します。| ```auto``` |  
+| GIT_PS1_SHOWDIRTYSTATE | これを空でない値に設定すると、ブランチ名の隣にステージされていない変更(*)とステージされた変更(+)が表示されます。| `yes` |  
+| GIT_PS1_SHOWSTASHSTATE | これを空でない値に設定すると、stashされた変更があれば、ブランチ名の横に '$' が表示されます。| `yes` |  
+| GIT_PS1_SHOWUNTRACKEDFILES | これを空ではない値に設定すると、もし未追跡のファイルがあれば、ブランチ名の横に'%'が表示されます。| `yes` |  
+| GIT_PS1_SHOWUPSTREAM | `GIT_PS1_SHOWUPSTREAM="auto"` と設定すると、HEAD とその上流との差分がブランチ名の横に表示されるようになります。"<" 上流が先行、">" HEADが先行、"<>" は分岐、"=" は差がないことを表します。| `auto` |  
 
 詳しくは [https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) もしくは [prowpt/git-prompt.sh](git-prompt.sh) を参照してください。その他のカスタマイズ可能な変数もそこに書かれています。  
 
 ### その他のカスタマイズ  
-カスタマイズしたいが、そのためのカスタマイズ可能な変数がない場合、 ```prowpt-core.sh``` などのファイルを上書きしてカスタマイズしてください。  
+カスタマイズしたいが、そのためのカスタマイズ可能な変数がない場合、 `prowpt-core.sh` などのファイルを上書きしてカスタマイズしてください。  
 
 ## Contributing  
 このプログラムが完全でないことは承知しています。このプログラムへの貢献は歓迎です。もしあなたが貢献する気があれば、ぜひプルリクエストを作成してください。  
@@ -256,9 +257,18 @@ Git セグメントでは、[https://github.com/git/git/blob/master/contrib/comp
 ## お問い合わせ  
 バグなど、何か問題がある場合、  
 - このプログラムに関することであれば、issueを開いてください。   
-- GitHub のアカウントを持っていない、または他にissue を開くべきでない理由がある場合は、Twitter の DM: [Twitter @alpaca_honke](https://twitter.com/alpaca_honke) もしくは [Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSdRuzAmGEqDV4RRd-70JKXD0lAHE6xjEp8Qp5-Jfut-ysQMYQ/viewform) に、 Prowpt についてとの旨を書いた上で連絡してください。  
+- GitHub のアカウントを持っていない、または他にissue を開くべきでない理由がある場合は、以下に記載の連絡先へお願いします。  
 
-**注：なにか質問がある場合、 [Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSdRuzAmGEqDV4RRd-70JKXD0lAHE6xjEp8Qp5-Jfut-ysQMYQ/viewform) をご利用ください。 issue を質問に使わないでください。**  
+### 連絡先
+
+これらはよく使われるアドレスです。その他の連絡先については[alpac-honke.github.io](https://alpaca-honke.github.io/)をご覧ください。
+
+- Fediverse (Activity Pub)
+    - [もこきー @alpaca_honke@mkkey.net](https://mkkey.net/@alpaca-honke)
+    - [Misskey.io @alpaca_honke@misskey.io](https://misskey.io/@alpaca-honke)
+- Discord @alpaca_honke
+- [電子メール (Google Forms)](https://docs.google.com/forms/d/e/1FAIpQLSdRuzAmGEqDV4RRd-70JKXD0lAHE6xjEp8Qp5-Jfut-ysQMYQ/viewform) 
+- (Twitter: [Twitter @alpaca_honke](https://twitter.com/alpaca_honke))
 
 ## ライセンス  
 Prowpt はフリーソフトウェアです。あなたは Free Software Foundation によって発行された GNU General Public Licence version 2.0 のもとで頒布、改変できます。  

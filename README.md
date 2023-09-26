@@ -37,13 +37,14 @@ Note: Syantax highlighting is not included.
     - [Other Customization](#other-customization)
   - [Contributing](#contributing)
   - [Contact Me](#contact-me)
+    - [Addresses](#addresses)
   - [License](#license)
 
 
 ## Features  
 - Easy to manage plugin with common plugin managers like Zinit, or Oh-My-Zsh, e.t.c.  
 - The display and colors change depending on the Git branch state.  
-- Python virtualenv environments are displayed.
+- Python virtualenv environments displaying
 - Easy to custom due to simpler code  
 - Many customizable variables  
 - Lightweight repository  
@@ -61,16 +62,16 @@ It needs Nerd Fonts to use glyphs.
 Python virtualenv environment name will be displayed when you are in the environment.  
 ### Git Status Icon 
 If there is/are
-- unstaged file(s): ```*```  
-- staged file(s): ```+```  
-- something stashed: ```$```  
-- untracked file(s): ```%```  
+- unstaged file(s): `*`  
+- staged file(s): `+`  
+- something stashed: `$`  
+- untracked file(s): `%`  
 
 HEAD and upstream defference  
-- behind: ```<```  
-- ahead: ```>```  
-- diverged: ```<>```  
-- up-to-date: ```=```  
+- behind: `<`  
+- ahead: `>`  
+- diverged: `<>`  
+- up-to-date: `=`  
 
 ## Installation  
 ### Bash  
@@ -79,7 +80,7 @@ HEAD and upstream defference
     ```bash
     git clone https://github.com/alpaca-honke/prowpt.git ~/.prowpt/
     ```
-1. Add the following line below the ```PS1``` settings in ```~/.bashrc```  
+1. Add the following line below the `PS1` settings in `~/.bashrc`  
     ```bash:.bashrc
     source ~/.prowpt/prowpt.bash
     ```
@@ -98,13 +99,13 @@ HEAD and upstream defference
     ```zsh
     git clone https://github.com/alpaca-honke/prowpt.git ~/.prowpt/
     ```
-1. Comment out the following line in ```~/.zshrc```  
+1. Comment out the following line in `~/.zshrc`  
     ```zsh:.zshrc
     autoload -Uz promptinit
     promptinit
     prompt adam1
     ```
-1. Add the following line in ```~/.zshrc```  
+1. Add the following line in `~/.zshrc`  
     ```zsh:.zshrc
     source ~/.prowpt/prowpt.plugin.zsh
     ```
@@ -115,7 +116,7 @@ HEAD and upstream defference
     ```zsh
     git clone https://github.com/alpaca-honke/prowpt.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/prowpt/
     ```
-1. Add ```prowpt``` to the list of plugins for Oh-My-Zsh in the ```~/.zshrc```  
+1. Add `prowpt` to the list of plugins for Oh-My-Zsh in the `~/.zshrc`  
     ```zsh:.zshrc
     plugins=(
         #other plugins
@@ -125,7 +126,7 @@ HEAD and upstream defference
 1. Restart your terminal  
 
 #### Zinit  
-1. Add the following line to ```~/.zshrc```  
+1. Add the following line to `~/.zshrc`  
     ```zsh
     zinit light alpaca-honke/prowpt
     ```
@@ -139,7 +140,7 @@ HEAD and upstream defference
 2. Restart your terminal  
 
 #### Zplug  
-1. Add the following line to ```~/.zshrc```  
+1. Add the following line to `~/.zshrc`  
     ```zsh:.zshrc
     zplug "alpaca-honke/prowpt", as:plugin, at:main
     ```
@@ -153,7 +154,7 @@ HEAD and upstream defference
 1. Restart your terminal  
 
 ## Customization  
-You can easily to custom it using ```~/.config/prowpt/config.sh```.  
+You can easily to custom it using `~/.config/prowpt/config.sh`.  
 1. Create a directory  
     ```sh
     mkdir ~/.config/prowpt/
@@ -174,31 +175,31 @@ GIT_PS1_SHOWUPSTREAM=""
 #### Text Values  
 | Variables | Description | Default |  
 | ---- | ---- | ---- |  
-| PROWPT_CURRENT_TIME | First segment value | Bash: ```\t```, Zsh: ```%*``` |  
-| PROWPT_USER | Second segment value | Bash: ```\u```, Zsh: ```%n``` |
-| PROWPT_HOST | Third segment value | Bash: ```\h```, Zsh: ```%m``` |
-| PROWPT_PROMPT | Last (second line) segment value | Bash: ```$```, Zsh: ```%#``` |
-| PROWPT_GIT_HEAD_BRANCH | An icon that is shown when current HEAD is a branch in Git repos | ```$'\ue0a0'``` |  
-| PROWPT_GIT_HEAD_DETACHED | An icon that is shown when current HEAD is a detached HEAD in Git repos | ```$\ue729'``` |  
+| PROWPT_CURRENT_TIME | First segment value | Bash: `\t`, Zsh: `%*` |  
+| PROWPT_USER | Second segment value | Bash: `\u`, Zsh: `%n` |
+| PROWPT_HOST | Third segment value | Bash: `\h`, Zsh: `%m` |
+| PROWPT_PROMPT | Last (second line) segment value | Bash: `$`, Zsh: `%#` |
+| PROWPT_GIT_HEAD_BRANCH | An icon that is shown when current HEAD is a branch in Git repos | `$'\ue0a0'` |  
+| PROWPT_GIT_HEAD_DETACHED | An icon that is shown when current HEAD is a detached HEAD in Git repos | `$\ue729'` |  
 
 #### Delimiter
 Set the delimiter for segment (the block of the prompt).  
-You can set the delimiter using unicode like ```$'\ue0b0'```.  
+You can set the delimiter using unicode like `$'\ue0b0'`.  
 There is a list of commonly used delimiters.  
 ![Delimiter sample](images/delimiter-sample.png)  
 Note: You can use e0b1, e0b5, e0b9, e0bb, e0c1, e0cd for the PWD delimiter, and any other character in the list for segment delimiters.  
-If you want to use vertical segment delimiters, set ```PROWPT_SEGMENT_DELIMITER=""```. The same as for PWD delimiters, you can use ```|``` (pipe).  
+If you want to use vertical segment delimiters, set `PROWPT_SEGMENT_DELIMITER=""`. The same as for PWD delimiters, you can use `|` (pipe).  
 
 | Variables | Description | Default |  
 | ---- | --- | ---- |  
-| PROWPT_SEGMENT_DELIMITER | Segment delimiter | ```$'\ue060'``` |  
-| PROWPT_PWD_DELIMITER | Current directory delimiter instead of ```/``` | ```$'\ue0b1'``` |  
+| PROWPT_SEGMENT_DELIMITER | Segment delimiter | `$'\ue060'` |  
+| PROWPT_PWD_DELIMITER | Current directory delimiter instead of `/` | `$'\ue0b1'` |  
 
 #### Whether To Highlight Home Dir (~)   
 If you want to highlight your home directory, set  
-```PROWPT_PWD_HOME_HIGHLIGHT="yes"``` .  
+`PROWPT_PWD_HOME_HIGHLIGHT="yes"` .  
 If not,  
-set ```PROWPT_PWD_HOME_HIGHLIGHT="no"``` or any other value.  
+set `PROWPT_PWD_HOME_HIGHLIGHT="no"` or any other value.  
 
 #### Prompt Color  
 You can set prompt colors using ANSI 256 colors.  
@@ -206,29 +207,29 @@ You can set prompt colors using ANSI 256 colors.
 
 | Variables | Description | Default |  
 | ---- | ---- | ---- |  
-| PROWPT_CURRENT_TIME_FG | First segment foreground color | ```253``` |  
-| PROWPT_CURRENT_TIME_BG | First segment background color | ```31``` |  
-| PROWPT_USER_FG | Second segment foreground color | ```253``` |
-| PROWPT_USER_BG | Second segment background color | ```242``` |  
-| PROWPT_HOST_FG | Third segment foreground color | ```253``` |  
-| PROWPT_HOST_BG | Third segment background color | ```239``` |
-| PROWPT_PWD_FG | PWD segment foreground color | ```253``` |  
-| PROWPT_PWD_BG | PWD segment background color | ```237``` |  
-| PROWPT_PWD_DELIMITER_FG | PWD delimiter foreground color | ```250``` |  
-| PROWPT_PWD_HOME_FG | Home directory segment foreground color (when you set ```PROWPT_PWD_HOME_HIGHLIGHT="yes"```) | ```253``` |  
-| PROWPT_PWD_HOME_BG | Home directory segment background color (when you set ```PROWPT_PWD_HOME_HIGHLIGHT="no"```) | ```31``` |  
-| PROWPT_GIT_FG | Git status segment foreground color | ```236``` |  
-| PROWPT_GIT_BG | Git status segment background color | ```148``` |  
-| PROWPT_GIT_DIRTY_FG | Git status segment foreground color when working tree is dirty | ```253``` |  
-| PROWPT_GIT_DIRTY_BG | Git status segment background color when working tree is dirty | ```166``` |  
-| PROWPT_GIT_STAGED_FG | Git status segment foreground color when there are some staged files | ```236``` |  
-| PROWPT_GIT_STAGED_BG | Git status segment background color when there are some staged files | ```178``` |  
-| PROWPT_GIT_DETACHED_FG | Git status segment background color when current HEAD is a detached HEAD | ```253``` |  
-| PROWPT_GIT_DETACHED_BG | Git status segment foreground color when current HEAD is a detached HEAD | ```103``` |  
-| PROWPT_PROMPT_FG | Last (second line) segment foreground color | ```253``` |  
-| PROWPT_PROMPT_BG | Last (second line) segment background color | ```237``` |  
-| PROWPT_PROMPT_ERROR_FG | Last (second line) segment foreground color (when exit status is not 0) | ```253``` |  
-| PROWPT_PROMPT_ERROR_BG | Last (second line) segment background color (when exit status is not 0) | ```5``` |  
+| PROWPT_CURRENT_TIME_FG | First segment foreground color | `253` |  
+| PROWPT_CURRENT_TIME_BG | First segment background color | `31` |  
+| PROWPT_USER_FG | Second segment foreground color | `253` |
+| PROWPT_USER_BG | Second segment background color | `242` |  
+| PROWPT_HOST_FG | Third segment foreground color | `253` |  
+| PROWPT_HOST_BG | Third segment background color | `239` |
+| PROWPT_PWD_FG | PWD segment foreground color | `253` |  
+| PROWPT_PWD_BG | PWD segment background color | `237` |  
+| PROWPT_PWD_DELIMITER_FG | PWD delimiter foreground color | `250` |  
+| PROWPT_PWD_HOME_FG | Home directory segment foreground color (when you set `PROWPT_PWD_HOME_HIGHLIGHT="yes"`) | `253` |  
+| PROWPT_PWD_HOME_BG | Home directory segment background color (when you set `PROWPT_PWD_HOME_HIGHLIGHT="no"`) | `31` |  
+| PROWPT_GIT_FG | Git status segment foreground color | `236` |  
+| PROWPT_GIT_BG | Git status segment background color | `148` |  
+| PROWPT_GIT_DIRTY_FG | Git status segment foreground color when working tree is dirty | `253` |  
+| PROWPT_GIT_DIRTY_BG | Git status segment background color when working tree is dirty | `166` |  
+| PROWPT_GIT_STAGED_FG | Git status segment foreground color when there are some staged files | `236` |  
+| PROWPT_GIT_STAGED_BG | Git status segment background color when there are some staged files | `178` |  
+| PROWPT_GIT_DETACHED_FG | Git status segment background color when current HEAD is a detached HEAD | `253` |  
+| PROWPT_GIT_DETACHED_BG | Git status segment foreground color when current HEAD is a detached HEAD | `103` |  
+| PROWPT_PROMPT_FG | Last (second line) segment foreground color | `253` |  
+| PROWPT_PROMPT_BG | Last (second line) segment background color | `237` |  
+| PROWPT_PROMPT_ERROR_FG | Last (second line) segment foreground color (when exit status is not 0) | `253` |  
+| PROWPT_PROMPT_ERROR_BG | Last (second line) segment background color (when exit status is not 0) | `5` |  
 
 #### Git Segment Style  
 This segment uses [https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh).  
@@ -236,15 +237,15 @@ The customizable variables follow this script.
 
 | Variables | Description | Default |  
 | ---- | ---- | ---- |  
-| GIT_PS1_SHOWDIRTYSTATE | If you set it to a noempty value, unstaged (*) and staged (+) changes will be shown next to the branch name. | ```yes``` |  
-| GIT_PS1_SHOWSTASHSTATE | By setting it to a nonempty value, if something is stashed, then a '$' will be shown next to the branch name. | ```yes``` |  
-| GIT_PS1_SHOWUNTRACKEDFILES | If you set it to a nonempty value, then a '%' will be shown next to the branch name if there're untracked files. | ```yes``` |  
-| GIT_PS1_SHOWUPSTREAM | If you set ```GIT_PS1_SHOWUPSTREAM="auto"```, then the difference betweeen HEAD and its upstream will be shown next to the branch name. A "<" indicates you are behind, ">" indicates you are ahead, "<>" indicates you have diverged and "=" indicates that there is no difference. | ```auto``` |  
+| GIT_PS1_SHOWDIRTYSTATE | If you set it to a noempty value, unstaged (*) and staged (+) changes will be shown next to the branch name. | `yes` |  
+| GIT_PS1_SHOWSTASHSTATE | By setting it to a nonempty value, if something is stashed, then a '$' will be shown next to the branch name. | `yes` |  
+| GIT_PS1_SHOWUNTRACKEDFILES | If you set it to a nonempty value, then a '%' will be shown next to the branch name if there're untracked files. | `yes` |  
+| GIT_PS1_SHOWUPSTREAM | If you set `GIT_PS1_SHOWUPSTREAM="auto"`, then the difference betweeen HEAD and its upstream will be shown next to the branch name. A "<" indicates you are behind, ">" indicates you are ahead, "<>" indicates you have diverged and "=" indicates that there is no difference. | `auto` |  
 
 See [https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) or [prowpt/git-prompt.sh](git-prompt.sh) for details. Other customizable variables are also written there.  
 
 ### Other Customization  
-If you want to custom but there are no customizable variables for it, overwrite ```prowpt-core.sh``` or any other files.   
+If you want to custom but there are no customizable variables for it, overwrite `prowpt-core.sh` or any other files.   
 
 ## Contributing  
 I know this program is not complete.We welcome your contribution to this program. If you are willing to contribute, please make some pull requests.  
@@ -258,9 +259,18 @@ In the same way, open an issue if you find some problems or need more features.
 ## Contact Me  
 If there is/are some bugs or other problems,  
 - Open an issue if it is about this program.  
-- If you don't have a GitHub account, or have other reasons to think you shouldn't open an issue of it, contact me via Twitter DM: [Twitter @alpaca_honke](https://twitter.com/alpaca_honke) , or [Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSdRuzAmGEqDV4RRd-70JKXD0lAHE6xjEp8Qp5-Jfut-ysQMYQ/viewform) (Though it is written in Japanese, don't translate your writing to Japanese.) with a note that it is about Prowpt.  
+- If you don't have a GitHub account, or have other reasons to think you shouldn't open an issue of it, contact me with the contact address below.  
 
-**Note: If you have some questions, use [Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSdRuzAmGEqDV4RRd-70JKXD0lAHE6xjEp8Qp5-Jfut-ysQMYQ/viewform). Don't use the issues to ask some questions.**  
+### Addresses
+
+These are commonly used addresses. See [alpaca-honke.github.io](https://alpaca-honke.githb.io/) for other addresses.  
+
+- Fediverse (Activity Pub)
+    - [@alpaca_honke@mkkey.net](https://mkkey.net/@alpaca-honke)
+    - [@alpaca_honke@misskey.io](https://misskey.io/@alpaca-honke)
+- Discord @alpaca_honke
+- [Email (Google Forms)](https://docs.google.com/forms/d/e/1FAIpQLSdRuzAmGEqDV4RRd-70JKXD0lAHE6xjEp8Qp5-Jfut-ysQMYQ/viewform) (Though it is written in Japanese, don't translate your writing to Japanese.) with a note that it is about Prowpt.  
+- (Twitter: [Twitter @alpaca_honke](https://twitter.com/alpaca_honke))
 
 ## License  
 Prowpt is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by  the Free Software Foundation, version 2.0 of the License.
