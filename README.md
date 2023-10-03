@@ -133,9 +133,9 @@ HEAD and upstream defference
 1. Restart your terminal  
 
 #### Antigen  
-1. Run the following command  
+1. Run or write in the `.zshrc` the following command  
    ```zsh
-   antigen bundle alpaca-honke/prowpt
+   antigen bundle alpaca-honke/prowpt --branch=main
    ```
 2. Restart your terminal  
 

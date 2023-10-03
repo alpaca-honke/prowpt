@@ -134,7 +134,7 @@ HEAD とアップストリームとの差
 #### Antigen  
 1. 以下の行を `~/.zshrc` に追加  
    ```zsh
-   antigen bundle alpaca-honke/prowpt
+   antigen bundle alpaca-honke/prowpt --branch=main
    ```
 1. ターミナルを再起動  
 
