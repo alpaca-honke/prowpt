@@ -269,7 +269,7 @@ These are commonly used addresses. See [alpaca-honke.github.io](https://alpaca-h
     - [@alpaca_honke@mkkey.net](https://mkkey.net/@alpaca-honke)
     - [@alpaca_honke@misskey.io](https://misskey.io/@alpaca-honke)
 - Discord @alpaca_honke
-- [Email (Google Forms)](https://docs.google.com/forms/d/e/1FAIpQLSdRuzAmGEqDV4RRd-70JKXD0lAHE6xjEp8Qp5-Jfut-ysQMYQ/viewform) (Though it is written in Japanese, don't translate your writing to Japanese.) with a note that it is about Prowpt.  
+- [Email akp@ymail.ne.jp](mailto:akp@ymail.ne.jp) 
 - (Twitter: [Twitter @alpaca_honke](https://twitter.com/alpaca_honke))
 
 ## License  

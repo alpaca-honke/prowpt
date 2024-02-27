@@ -267,7 +267,7 @@ Git セグメントでは、[https://github.com/git/git/blob/master/contrib/comp
     - [もこきー @alpaca_honke@mkkey.net](https://mkkey.net/@alpaca-honke)
     - [Misskey.io @alpaca_honke@misskey.io](https://misskey.io/@alpaca-honke)
 - Discord @alpaca_honke
-- [電子メール (Google Forms)](https://docs.google.com/forms/d/e/1FAIpQLSdRuzAmGEqDV4RRd-70JKXD0lAHE6xjEp8Qp5-Jfut-ysQMYQ/viewform) 
+- [電子メール akp@ymail.ne.jp](mailto:akp@ymail.ne.jp) 
 - (Twitter: [Twitter @alpaca_honke](https://twitter.com/alpaca_honke))
 
 ## ライセンス  
