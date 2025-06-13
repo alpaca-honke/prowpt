@@ -29,10 +29,18 @@ precmd () {
     prowpt_init
     PROWPT_PROMPT_CONTENT=$(prowpt_head)
 
-    cat $PROWPT_REPO_ROOT/callfunc.list | while read -r line
-    do
-      PROWPT_PROMPT_CONTENT+=$(eval prowpt_$line)
-    done
+    if [ -e ~/.config/prowpt/callfunc.list ]
+    then
+      cat ~/.config/prowpt/callfunc.list | while read -r line
+      do
+        PROWPT_PROMPT_CONTENT+=$(eval prowpt_$line)
+      done
+    else
+      cat $PROWPT_REPO_ROOT/callfunc.list | while read -r line
+      do
+        PROWPT_PROMPT_CONTENT+=$(eval prowpt_$line)
+      done
+    fi
     PROWPT_PROMPT_CONTENT+=$(prowpt_lineend)
 
     PROMPT="${PROWPT_PROMPT_CONTENT} "
