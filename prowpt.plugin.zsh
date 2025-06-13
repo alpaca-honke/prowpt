@@ -21,9 +21,19 @@ PROWPT_USER="%n"
 PROWPT_HOST="%m"
 PROWPT_PROMPT="%#"
 
-source $( cd "$( dirname "$0" )" && pwd -P)/prowpt-core.sh
+PROWPT_REPO_ROOT=$( cd "$( dirname "$0" )" && pwd -P)
+
+source $PROWPT_REPO_ROOT/prowpt-core.sh
 
 precmd () {
     prowpt_init
-    PROMPT=$(prowpt_current_time)$(prowpt_user)$(prowpt_host)$(prowpt_pwd)$(prowpt_git)%f%k$'\n'$(prowpt_prompt)%f%k' '
+    PROWPT_PROMPT_CONTENT=$(prowpt_head)
+
+    cat $PROWPT_REPO_ROOT/callfunc.list | while read -r line
+    do
+      PROWPT_PROMPT_CONTENT+=$(eval prowpt_$line)
+    done
+    PROWPT_PROMPT_CONTENT+=$(prowpt_lineend)
+
+    PROMPT="${PROWPT_PROMPT_CONTENT} "
 }
