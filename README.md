@@ -194,6 +194,7 @@ prompt
     - prompt
 - When you want to insert line break, write `linebreak` as segment.
 - **You need to set segment next to `linebreak` as argument of the `linebreak` as the example shown above.**
+- It will be a cause of a bug to set the line includes only git segment. (alone segment delimiter will be shown at the end of the previous line...)
 
 ### Customizable Value
 You can easily to custom prompt by setting some variables like this:  
