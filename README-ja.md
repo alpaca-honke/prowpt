@@ -29,6 +29,7 @@
       - [Zplug](#zplug)
       - [Sheldon](#sheldon-1)
   - [カスタマイズ](#カスタマイズ)
+    - [セグメントの並び替えと削除](#セグメントの並び替えと削除)
     - [カスタマイズ可能な値](#カスタマイズ可能な値)
       - [文字列](#文字列)
       - [区切り文字](#区切り文字)
@@ -163,8 +164,36 @@ HEAD とアップストリームとの差
     vim ~/.config/prowpt/config.sh
     ```
 
+### セグメントの並び替えと削除
+以下のようにすることでセグメントを並び替えたり削除したりできます
+
+`callfunc.list`:
+```txt:callfunc.list
+current_time
+user
+host
+pwd
+git
+linebreak prompt
+prompt
+```
+
+- このファイルは先頭行から末尾に向けて読み込まれます
+- 空行は作らないでください
+- 以下のセグメントをを指定することができます
+    - current_time
+    - user
+    - host
+    - pwd
+    - git
+    - prompt
+- 改行を挿入したい場合は、`linebreak` をセグメントとして記述してください.
+- **`linebreak` の直後に表示するセグメントを、上記の例のように`linebreak`の引数として記述する必要があります。**
+
 ### カスタマイズ可能な値   
 以下のようにいくつかの変数を設定することで、簡単にprowptをカスタマイズすることができます。  
+
+`config.sh`:
 ```sh:config.sh
 PROWPT_SEGMENT_SEPARATOR=$'\ue0b8'
 PROWPT_CURRENT_TIME_BG="5"
@@ -174,10 +203,10 @@ GIT_PS1_SHOWUPSTREAM=""
 #### 文字列  
 | 変数名 | 説明 | デフォルト |
 | ---- | ---- | ---- |  
-| PROWPT_CURRENT_TIME | 最初のセグメント値（Python の virtualenv 環境外のとき） | Bash: `\t`, Zsh: `%*` |  
-| PROWPT_USER | 2番目のセグメントの値 | Bash: `\u`, Zsh: `%n` |
-| PROWPT_HOST | 3番目のセグメントの値 | Bash: `\h`, Zsh: `%n` |  
-| PROWPT_PROMPT | 最後（2行目）のセグメント値 | Bash: `\$`, Zsh: `%#` |  
+| PROWPT_CURRENT_TIME | `current_time`セグメント値（Python の virtualenv 環境外のとき） | Bash: `\t`, Zsh: `%*` |  
+| PROWPT_USER | `user`セグメントの値 | Bash: `\u`, Zsh: `%n` |
+| PROWPT_HOST | `host`セグメントの値 | Bash: `\h`, Zsh: `%n` |  
+| PROWPT_PROMPT | `prompt`セグメント値 | Bash: `\$`, Zsh: `%#` |  
 | PROWPT_GIT_HEAD_BRANCH | 現在の Git の HEAD がブランチであるときに表示されるアイコン | `$'\ue0a0'` |  
 | PROWPT_GIT_HEAD_DETACHED | 現在の Git の HEAD がデタッチドヘッドであるときに表示されるアイコン | `$'\ue729'` |  
 
@@ -277,4 +306,4 @@ Prowpt はこれが有用であることを願って頒布されますが、商�
 
 詳しくは [COPYING](COPYING) または [GNU General Public Licence version 2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), 及び [Licenses - GNU Project - Free Software Foundation](https://www.gnu.org/licenses/) を参照してください。  
 
-Copyright (C) 2023 あるかっぱ/アルパカ本家 Alkappa/alpaca-honke  
+Copyright (C) 2023-2025 あるかっぱ/アルパカ本家 Alkappa/alpaca-honke  

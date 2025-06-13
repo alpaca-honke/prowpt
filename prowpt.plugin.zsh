@@ -1,5 +1,5 @@
 #Prowpt - Simple, lightweight, and customizable Powerline-like prompt theme for Bash and Zsh  
-#Copyright (C) 2023 Alkappa/alpaca-honke
+#Copyright (C) 2023-2025 Alkappa/alpaca-honke
 #
 #This file is part of Prowpt.
 #
@@ -21,9 +21,27 @@ PROWPT_USER="%n"
 PROWPT_HOST="%m"
 PROWPT_PROMPT="%#"
 
-source $( cd "$( dirname "$0" )" && pwd -P)/prowpt-core.sh
+PROWPT_REPO_ROOT=$( cd "$( dirname "$0" )" && pwd -P)
+
+source $PROWPT_REPO_ROOT/prowpt-core.sh
 
 precmd () {
     prowpt_init
-    PROMPT=$(prowpt_current_time)$(prowpt_user)$(prowpt_host)$(prowpt_pwd)$(prowpt_git)%f%k$'\n'$(prowpt_prompt)%f%k' '
+    PROWPT_PROMPT_CONTENT=$(prowpt_head)
+
+    if [ -e ~/.config/prowpt/callfunc.list ]
+    then
+      cat ~/.config/prowpt/callfunc.list | while read -r line
+      do
+        PROWPT_PROMPT_CONTENT+=$(eval prowpt_$line)
+      done
+    else
+      cat $PROWPT_REPO_ROOT/callfunc.list | while read -r line
+      do
+        PROWPT_PROMPT_CONTENT+=$(eval prowpt_$line)
+      done
+    fi
+    PROWPT_PROMPT_CONTENT+=$(prowpt_lineend)
+
+    PROMPT="${PROWPT_PROMPT_CONTENT} "
 }
