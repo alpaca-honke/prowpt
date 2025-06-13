@@ -28,6 +28,7 @@ Note: Syantax highlighting is not included.
       - [Zplug](#zplug)
       - [Sheldon](#sheldon-1)
   - [Customization](#customization)
+    - [Segment Sorting And Deleting](#segment-sorting-and-deleting)
     - [Customizable Value](#customizable-value)
       - [Text Values](#text-values)
       - [Delimiter](#delimiter)
@@ -154,18 +155,50 @@ HEAD and upstream defference
 1. Restart your terminal  
 
 ## Customization  
-You can easily to custom it using `~/.config/prowpt/config.sh`.  
+You can easily to custom it using `~/.config/prowpt/config.sh` and `~/.config/prowpt/callfunc.list`.  
 1. Create a directory  
     ```sh
     mkdir ~/.config/prowpt/
     ```
-1. Edit config file (You can use other text editors.)  
+1. Edit config file
     ```sh
     vim ~/.config/prowpt/config.sh
     ```
 
-### Customizable Value   
+    ```
+    vim ~/.config/prowpt/callfunc.list
+    ```
+
+### Segment Sorting And Deleting
+You can sort and delete segments like this:
+
+`callfunc.list`:
+```txt:callfunc.list
+current_time
+user
+host
+pwd
+git
+linebreak prompt
+prompt
+```
+
+- This file is loaded from head line to last line.
+- Do not make blank line(s).
+- You can use these segments:
+    - current_time
+    - user
+    - host
+    - pwd
+    - git
+    - prompt
+- When you want to insert line break, write `linebreak` as segment.
+- **You need to set segment next to `linebreak` as argument of the `linebreak` as the example shown above.**
+
+### Customizable Value
 You can easily to custom prompt by setting some variables like this:  
+
+`config.sh`:
 ```sh:config.sh
 PROWPT_SEGMENT_SEPARATOR=$'\ue0b8'
 PROWPT_CURRENT_TIME_BG="5"
@@ -175,10 +208,10 @@ GIT_PS1_SHOWUPSTREAM=""
 #### Text Values  
 | Variables | Description | Default |  
 | ---- | ---- | ---- |  
-| PROWPT_CURRENT_TIME | First segment value | Bash: `\t`, Zsh: `%*` |  
-| PROWPT_USER | Second segment value | Bash: `\u`, Zsh: `%n` |
-| PROWPT_HOST | Third segment value | Bash: `\h`, Zsh: `%m` |
-| PROWPT_PROMPT | Last (second line) segment value | Bash: `$`, Zsh: `%#` |
+| PROWPT_CURRENT_TIME | `current_time` segment value | Bash: `\t`, Zsh: `%*` |  
+| PROWPT_USER | `user` segment value | Bash: `\u`, Zsh: `%n` |
+| PROWPT_HOST | `host` segment value | Bash: `\h`, Zsh: `%m` |
+| PROWPT_PROMPT | `prompt` segment value | Bash: `$`, Zsh: `%#` |
 | PROWPT_GIT_HEAD_BRANCH | An icon that is shown when current HEAD is a branch in Git repos | `$'\ue0a0'` |  
 | PROWPT_GIT_HEAD_DETACHED | An icon that is shown when current HEAD is a detached HEAD in Git repos | `$\ue729'` |  
 
@@ -279,4 +312,4 @@ Prowpt is distributed in the hope that it will be useful, but WITHOUT ANY WARRAN
 
 See [COPYING](COPYING) or [GNU General Public Licence version 2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), and [Licenses - GNU Project - Free Software Foundation](https://www.gnu.org/licenses/) for more details.  
 
-Copyright (C) 2023 あるかっぱ/アルパカ本家 Alkappa/alpaca-honke  
+Copyright (C) 2023-2025 あるかっぱ/アルパカ本家 Alkappa/alpaca-honke  

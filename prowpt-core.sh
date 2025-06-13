@@ -1,5 +1,5 @@
 #Prowpt - Simple, lightweight, and customizable Powerline-like prompt theme for Bash and Zsh  
-#Copyright (C) 2023 Alkappa/alpaca-honke
+#Copyright (C) 2023-2025 Alkappa/alpaca-honke
 #
 #This file is part of Prowpt.
 #
